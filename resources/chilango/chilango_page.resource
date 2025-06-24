@@ -1,6 +1,6 @@
 *** Settings ***
 Library      Selenium2Library
-# Library      ../../libraries/create_xpath.py
+Library      ../../libraries/create_xpath.py
 Variables    ./chilango_locators.yaml
 
 *** Variables ***
@@ -9,7 +9,7 @@ ${SH_TIME} =    1s
 ${ENVIRONMENT}
 
 *** Keywords ***
-Load Chilango Login Page
+Load Chilango Home Page
     Wait For Condition               return document.readyState == "complete"    ${TIME}
     Wait Until Element Is Visible    ${chilango_locators.chilango_logo}          ${TIME}
     Wait Until Element Is Enabled    ${chilango_locators.play_button}            ${TIME}

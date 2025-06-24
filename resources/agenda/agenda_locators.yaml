@@ -1,0 +1,7 @@
+agenda_locators:
+  #Agenda Page
+  search_input_agenda:           xpath=//input[@name='search']
+  inicia_sesion_link_agenda:     xpath=//a/span[contains(text(),'Iniciar sesión')]
+  musica_button_agenda:          xpath=//a/span[contains(.,'Música')]
+  teatro_button_agenda:          xpath=//a/span[contains(text(),'Teatro')]
+  calendario_button_agenda:      xpath=//div[@class='relative']/button[@type='button']
