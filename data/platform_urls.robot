@@ -1,0 +1,7 @@
+*** Variables **
+&{CHILANGO} = 
+...    CHILANGO=https://www.chilango.com/
+...    RADIO=https://chilangoradio.com/
+...    AGENDA=https://www.chilango.com/agenda/
+...    LOGIN=https://login.chilango.com/
+    
