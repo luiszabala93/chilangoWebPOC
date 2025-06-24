@@ -1,5 +1,5 @@
 *** Variables **
-&{CHILANGO} = 
+&{PAGE} = 
 ...    CHILANGO=https://www.chilango.com/
 ...    RADIO=https://chilangoradio.com/
 ...    AGENDA=https://www.chilango.com/agenda/
