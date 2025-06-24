@@ -22,4 +22,4 @@ Test Teardown    End Web Test
 CHI_01 - Chilango Home Page Is Loaded
     [Documentation]    Test Chilango home page is loaded correctly
     [Tags]    Chilango    CHI_01
-    Load Chilango Login Page
+    Load Chilango Home Page
