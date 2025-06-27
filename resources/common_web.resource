@@ -15,6 +15,7 @@ Begin Web Test
     ${URL} =    Collections.Get From Dictionary    ${PAGE}    ${ENVIRONMENT}
     Go To    ${URL}
     Maximize Browser Window
+    Set Selenium Speed    0.5s
 
 End Web Test
     [Documentation]    This keyword close the browser

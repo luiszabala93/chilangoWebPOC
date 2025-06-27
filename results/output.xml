@@ -1,115 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.1 (Python 3.10.7 on win32)" generated="2025-06-24T15:56:46.303308" rpa="false" schemaversion="5">
-<suite id="s1" name="chilangoWebPOC" source="D:\Personal Documents\Tec de Monterrey\chilangoWebPOC">
-<suite id="s1-s1" name="Test" source="D:\Personal Documents\Tec de Monterrey\chilangoWebPOC\test">
-<suite id="s1-s1-s1" name="Agenda" source="D:\Personal Documents\Tec de Monterrey\chilangoWebPOC\test\agenda">
-<suite id="s1-s1-s1-s1" name="Agenda Test" source="D:\Personal Documents\Tec de Monterrey\chilangoWebPOC\test\agenda\agenda_test.robot">
-<test id="s1-s1-s1-s1-t1" name="AGN_01 - Agenda Home Page Is Loaded" line="22">
+<robot generator="Robot 7.3.1 (Python 3.13.3 on win32)" generated="2025-06-26T19:28:00.573676" rpa="false" schemaversion="5">
+<suite id="s1" name="chilangoWebPOC" source="C:\Users\angyD\OneDrive\Documentos\PROGRAM\chilangoWebPOC">
+<suite id="s1-s1" name="Test" source="C:\Users\angyD\OneDrive\Documentos\PROGRAM\chilangoWebPOC\test">
+<suite id="s1-s1-s1" name="Chilango" source="C:\Users\angyD\OneDrive\Documentos\PROGRAM\chilangoWebPOC\test\chilango">
+<suite id="s1-s1-s1-s1" name="Chilango Test" source="C:\Users\angyD\OneDrive\Documentos\PROGRAM\chilangoWebPOC\test\chilango\chilango_test.robot">
+<test id="s1-s1-s1-s1-t1" name="CHI_04 - LogIn Page" line="54">
 <kw name="Begin Web Test" owner="common_web" type="SETUP">
 <kw name="Open Browser" owner="Selenium2Library">
-<msg time="2025-06-24T15:56:46.660852" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg time="2025-06-26T19:28:00.955108" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <arg>options=add_argument("--inprivate"); add_argument("--ignore-certificate-errors")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-24T15:56:46.659851" elapsed="2.196968"/>
+<status status="PASS" start="2025-06-26T19:28:00.954379" elapsed="1.293778"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2025-06-24T15:56:48.857972" level="INFO">${URL} = https://www.chilango.com/agenda/</msg>
+<msg time="2025-06-26T19:28:02.248783" level="INFO">${URL} = https://www.chilango.com/</msg>
 <var>${URL}</var>
 <arg>${PAGE}</arg>
 <arg>${ENVIRONMENT}</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2025-06-24T15:56:48.856819" elapsed="0.001153"/>
+<status status="PASS" start="2025-06-26T19:28:02.248504" elapsed="0.000318"/>
 </kw>
 <kw name="Go To" owner="Selenium2Library">
-<msg time="2025-06-24T15:56:48.858982" level="INFO">Opening url 'https://www.chilango.com/agenda/'</msg>
+<msg time="2025-06-26T19:28:02.249083" level="INFO">Opening url 'https://www.chilango.com/'</msg>
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-24T15:56:48.857972" elapsed="3.784403"/>
+<status status="PASS" start="2025-06-26T19:28:02.248959" elapsed="2.731742"/>
 </kw>
 <kw name="Maximize Browser Window" owner="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-24T15:56:52.643885" elapsed="0.044076"/>
+<status status="PASS" start="2025-06-26T19:28:04.980992" elapsed="0.036055"/>
+</kw>
+<kw name="Set Selenium Speed" owner="Selenium2Library">
+<arg>0.5s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-06-26T19:28:05.017346" elapsed="0.000296"/>
 </kw>
 <doc>This keyword helps set up all our test cases dynamically</doc>
-<status status="PASS" start="2025-06-24T15:56:46.659851" elapsed="6.028110"/>
+<status status="PASS" start="2025-06-26T19:28:00.952013" elapsed="4.065738"/>
 </kw>
-<kw name="Load Agenda Home Page" owner="agenda_page">
 <kw name="Wait For Condition" owner="Selenium2Library">
 <arg>return document.readyState == "complete"</arg>
 <arg>${TIME}</arg>
 <doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" start="2025-06-24T15:56:52.688959" elapsed="0.033938"/>
+<status status="PASS" start="2025-06-26T19:28:05.019674" elapsed="0.516840"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="Selenium2Library">
-<arg>${agenda_locators.search_input_agenda}</arg>
+<arg>${chilango_locators.login_button}</arg>
 <arg>${TIME}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T15:56:52.723898" elapsed="0.090264"/>
+<status status="PASS" start="2025-06-26T19:28:05.537005" elapsed="1.061839"/>
 </kw>
-<kw name="Wait Until Element Is Enabled" owner="Selenium2Library">
-<arg>${agenda_locators.inicia_sesion_link_agenda}</arg>
-<arg>${TIME}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-06-24T15:56:52.814162" elapsed="0.067071"/>
+<kw name="Click Element" owner="Selenium2Library">
+<msg time="2025-06-26T19:28:06.601194" level="INFO">Clicking element 'xpath=//a[text()="Inicia Sesión"]'.</msg>
+<arg>${chilango_locators.login_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-26T19:28:06.599741" elapsed="2.205623"/>
 </kw>
-<kw name="Wait Until Element Is Enabled" owner="Selenium2Library">
-<arg>${agenda_locators.musica_button_agenda}</arg>
-<arg>${TIME}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-06-24T15:56:52.881233" elapsed="0.046153"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="Selenium2Library">
-<arg>${agenda_locators.teatro_button_agenda}</arg>
-<arg>${TIME}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-06-24T15:56:52.927386" elapsed="0.038117"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="Selenium2Library">
-<arg>${agenda_locators.calendario_button_agenda}</arg>
-<arg>${TIME}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-06-24T15:56:52.966500" elapsed="0.033126"/>
-</kw>
-<status status="PASS" start="2025-06-24T15:56:52.688959" elapsed="0.311668"/>
+<kw name="Wait Until Element Is Visible" owner="Selenium2Library">
+<arg>locator=//a[contains(text(), "Registrate")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-26T19:28:08.806268" elapsed="1.043823"/>
 </kw>
 <kw name="End Web Test" owner="common_web" type="TEARDOWN">
 <kw name="Close All Browsers" owner="Selenium2Library">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-06-24T15:56:53.000627" elapsed="2.378415"/>
+<status status="PASS" start="2025-06-26T19:28:09.852194" elapsed="2.739444"/>
 </kw>
 <doc>This keyword close the browser</doc>
-<status status="PASS" start="2025-06-24T15:56:53.000627" elapsed="2.378415"/>
+<status status="PASS" start="2025-06-26T19:28:09.851322" elapsed="2.740633"/>
 </kw>
-<doc>Test Agenda home page is loaded correctly</doc>
-<tag>Agenda</tag>
-<tag>AGN_01</tag>
-<status status="PASS" start="2025-06-24T15:56:46.658843" elapsed="8.721463"/>
+<doc>Test LogIn page on Chilango</doc>
+<tag>CHI_04</tag>
+<tag>Chilango</tag>
+<status status="PASS" start="2025-06-26T19:28:00.949844" elapsed="11.642734"/>
 </test>
-<doc>Agenda Test Suite
-Agenda home page -&gt; https://www.chilango.com/agenda/</doc>
-<status status="PASS" start="2025-06-24T15:56:46.330908" elapsed="9.050401"/>
+<doc>Chilango Test Suite
+Chilango home page -&gt; https://www.chilango.com/</doc>
+<status status="PASS" start="2025-06-26T19:28:00.612901" elapsed="11.981863"/>
 </suite>
-<status status="PASS" start="2025-06-24T15:56:46.329912" elapsed="9.052394"/>
+<status status="PASS" start="2025-06-26T19:28:00.611419" elapsed="11.986494"/>
 </suite>
-<status status="PASS" start="2025-06-24T15:56:46.327377" elapsed="9.056940"/>
+<status status="PASS" start="2025-06-26T19:28:00.609772" elapsed="11.990715"/>
 </suite>
-<status status="PASS" start="2025-06-24T15:56:46.307312" elapsed="9.078004"/>
+<status status="PASS" start="2025-06-26T19:28:00.576059" elapsed="12.026587"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Agenda</stat>
-<stat pass="1" fail="0" skip="0">AGN_01</stat>
+<stat pass="1" fail="0" skip="0">CHI_04</stat>
+<stat pass="1" fail="0" skip="0">Chilango</stat>
 </tag>
 <suite>
 <stat name="chilangoWebPOC" id="s1" pass="1" fail="0" skip="0">chilangoWebPOC</stat>
 <stat name="Test" id="s1-s1" pass="1" fail="0" skip="0">chilangoWebPOC.Test</stat>
-<stat name="Agenda" id="s1-s1-s1" pass="1" fail="0" skip="0">chilangoWebPOC.Test.Agenda</stat>
-<stat name="Agenda Test" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">chilangoWebPOC.Test.Agenda.Agenda Test</stat>
+<stat name="Chilango" id="s1-s1-s1" pass="1" fail="0" skip="0">chilangoWebPOC.Test.Chilango</stat>
+<stat name="Chilango Test" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">chilangoWebPOC.Test.Chilango.Chilango Test</stat>
 </suite>
 </statistics>
 <errors>
