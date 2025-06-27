@@ -20,7 +20,7 @@ ${TEST_DATA_PATH} =    agenda
 ${LONG_TIME} =         20
 
 #To run
-#robot -d results -i AGN_01 -v ENVIRONMENT:AGENDA -v BROWSER:chrome .
+#robot -d results -i AGN_01 -v ENVIRONMENT:AGENDA -v REPORT:FALSE -v BROWSER:chrome .
 
 *** Test Cases ***
 AGN_01 - Agenda Home Page Is Loaded
