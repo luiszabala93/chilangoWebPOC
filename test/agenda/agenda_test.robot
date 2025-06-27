@@ -12,8 +12,12 @@ Resource     ../../resources/agenda/agenda_page.resource
 Resource    ../../resources/common_web.resource
 
 
-Test Setup       Begin Web Test
+Test Setup       Begin Web Test    ${TEST_DATA_PATH}
 Test Teardown    End Web Test
+
+*** Variables ***
+${TEST_DATA_PATH} =    agenda
+${LONG_TIME} =         20
 
 #To run
 #robot -d results -i AGN_01 -v ENVIRONMENT:AGENDA -v BROWSER:chrome .
