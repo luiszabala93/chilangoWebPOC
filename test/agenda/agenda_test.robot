@@ -27,11 +27,14 @@ AGN_01 - Agenda Home Page Is Loaded
 AGN_02 - Search Jazz In Agenda Page
     [Documentation]    Test the search Button and the search action to find jazz events on the agenda page
     [Tags]    Agenda    AGN_02
+    Click On search Event And Search An Event
 
 AGN_03 - Click In More Events Until no More Events Loaded
-    [Documentation]
+    [Documentation]    Clicks the "Mas eventos"'s Button Until the Button is not Visible
     [Tags]    Agenda    AGN_03
+    Click On More Events Until Is Not Visible
 
 AGN_04 - Click An Event And Wait A Page to Load
-    [Documentation]
+    [Documentation]    Click an event's image and waits Until the event's calendar appears
     [Tags]    Agenda    AGN_04
+    Click Event And Wait For Calendar

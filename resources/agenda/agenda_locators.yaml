@@ -7,6 +7,6 @@ agenda_locators:
   calendario_button_agenda:      xpath=//div[@class='relative']/button[@type='button']
   Imagen_jazz:                   xpath=//img[@alt = 'We call it Jazz: Un Viaje al Corazón de Nueva Orleans']
   mostrar_mas_eventos_button:    xpath=//button[@type='button' and contains(text(),'Mostrar más eventos')]
-  Imagen_enjambre:               xpath=//img[@alt='Enjambre']
+  Imagen_evento:               xpath=//img[@alt='Enjambre']
   comprar_boleto_button:         xpath=//a[contains(text(),'Comprar boleto')]
   
