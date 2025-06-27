@@ -27,7 +27,10 @@ AGN_01 - Agenda Home Page Is Loaded
 AGN_02 - Search Jazz In Agenda Page
     [Documentation]    Test the search Button and the search action to find jazz events on the agenda page
     [Tags]    Agenda    AGN_02
-    Click On search Event And Search An Event
+    Load Agenda Home Page
+    Click On search Event And Search An Event    Jazz
+    Click On Event Found    We call it Jazz: Un Viaje al Corazón de Nueva Orleans
+    Sleep    10
 
 AGN_03 - Click In More Events Until no More Events Loaded
     [Documentation]    Clicks the "Mas eventos"'s Button Until the Button is not Visible
