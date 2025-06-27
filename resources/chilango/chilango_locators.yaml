@@ -11,6 +11,3 @@ chilango_locators:
  tim_burton_news_link:     xpath=//div[contains(@class, "titlehOme")]//a[contains(@href, "tim-burton-laberinto-en-cdmx")]
  close_banner:             xpath=//div[contains(@class, "closeAlert")]
  login_button:             xpath=//a[text()="Inicia Sesión"]
-
-
-

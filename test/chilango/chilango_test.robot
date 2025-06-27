@@ -47,7 +47,3 @@ CHI_04 - LogIn Page
     [Tags]    Chilango    CHI_04
     Wait For Condition    return document.readyState == "complete"    ${TIME}
     LogIn Page
-
-    
-
-
