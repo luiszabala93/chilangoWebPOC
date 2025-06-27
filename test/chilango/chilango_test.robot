@@ -12,14 +12,15 @@ Resource     ../../resources/chilango/chilango_page.resource
 Resource     ../../resources/common_web.resource
 Resource     ../../resources/chilango/login_page.resource
 
-Test Setup       Begin Web Test
+Test Setup       Begin Web Test    ${TEST_DATA_PATH}
 Test Teardown    End Web Test
 
 *** Variables ***
-${TIME} =       20s
+${TEST_DATA_PATH} =    chilango
+${LONG_TIME} =         20
 
 #To run
-#robot -d results -i CHI_01 -v ENVIRONMENT:CHILANGO -v BROWSER:chrome .
+#robot -d results -i CHI_01 -v ENVIRONMENT:CHILANGO -v REPORT:FALSE -v BROWSER:chrome .
 
 *** Test Cases ***
 CHI_01 - Chilango Home Page Is Loaded
@@ -44,8 +45,12 @@ CHI_03 - Close Banner
     Close Banner If Visible
 
 CHI_04 - LogIn Page
-    [Documentation]    Test LogIn page on Chilango
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that login page is loaded successfully
+    ...    Expected results: The page should load successfully
     [Tags]    Chilango    CHI_04
     Load Chilango Home Page
+    Get evidence
     Click on LogIn Button
     Load Login Page
+    Get evidence
