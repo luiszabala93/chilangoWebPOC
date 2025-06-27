@@ -9,8 +9,8 @@ chilango_locators:
  search_input:             xpath=//input[@id="searchInput"]
  search_button2:           xpath=//button[@type="submit" and contains(@class, "suscribeButton") and @aria-label="Buscar"]
  tim_burton_news_link:     xpath=//div[contains(@class, "titlehOme")]//a[contains(@href, "tim-burton-laberinto-en-cdmx")]
- close_banner:            xpath=//div[contains(@class, "closeAlert")]
- login_button:            xpath=//a[text()="Inicia Sesión"]
+ close_banner:             xpath=//div[contains(@class, "closeAlert")]
+ login_button:             xpath=//a[text()="Inicia Sesión"]
 
 
 

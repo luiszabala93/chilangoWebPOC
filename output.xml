@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.13.3 on win32)" generated="2025-06-26T20:55:31.531121" rpa="false" schemaversion="5">
+<suite id="s1" name="Chilango Test" source="c:\Users\angyD\OneDrive\Documentos\PROGRAM\chilangoWebPOC\test\chilango\chilango_test.robot">
+<test id="s1-t1" name="CHI_02 - Search Tim Burton's &quot;Laberinto en CDMX&quot; news on Chilango" line="30">
+<kw name="Begin Web Test" owner="common_web" type="SETUP">
+<kw name="Open Browser" owner="Selenium2Library">
+<msg time="2025-06-26T20:55:31.741725" level="INFO">Opening browser '' to base url 'about:blank'.</msg>
+<msg time="2025-06-26T20:55:31.743844" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-06-26T20:55:31.744230" level="FAIL">ValueError:  is not a supported browser.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--inprivate"); add_argument("--ignore-certificate-errors")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2025-06-26T20:55:31.741315" elapsed="0.007124">ValueError:  is not a supported browser.</status>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${URL}</var>
+<arg>${PAGE}</arg>
+<arg>${ENVIRONMENT}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2025-06-26T20:55:31.748781" elapsed="0.000113"/>
+</kw>
+<kw name="Go To" owner="Selenium2Library">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" start="2025-06-26T20:55:31.749037" elapsed="0.000064"/>
+</kw>
+<kw name="Maximize Browser Window" owner="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2025-06-26T20:55:31.749208" elapsed="0.000058"/>
+</kw>
+<kw name="Set Selenium Speed" owner="Selenium2Library">
+<arg>0.5s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="NOT RUN" start="2025-06-26T20:55:31.749396" elapsed="0.000075"/>
+</kw>
+<doc>This keyword helps set up all our test cases dynamically</doc>
+<status status="FAIL" start="2025-06-26T20:55:31.740465" elapsed="0.009162">ValueError:  is not a supported browser.</status>
+</kw>
+<kw name="End Web Test" owner="common_web" type="TEARDOWN">
+<kw name="Close All Browsers" owner="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-06-26T20:55:31.751000" elapsed="0.000409"/>
+</kw>
+<doc>This keyword close the browser</doc>
+<status status="PASS" start="2025-06-26T20:55:31.750459" elapsed="0.001227"/>
+</kw>
+<doc>Test search for Tim Burton's "Laberinto en CDMX" news on Chilango</doc>
+<tag>CHI_02</tag>
+<tag>Chilango</tag>
+<status status="FAIL" start="2025-06-26T20:55:31.739395" elapsed="0.012712">Setup failed:
+ValueError:  is not a supported browser.</status>
+</test>
+<doc>Chilango Test Suite
+Chilango home page -&gt; https://www.chilango.com/</doc>
+<status status="FAIL" start="2025-06-26T20:55:31.534785" elapsed="0.218597"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">CHI_02</stat>
+<stat pass="0" fail="1" skip="0">Chilango</stat>
+</tag>
+<suite>
+<stat name="Chilango Test" id="s1" pass="0" fail="1" skip="0">Chilango Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

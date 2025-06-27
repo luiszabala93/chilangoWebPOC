@@ -1,90 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.1 (Python 3.13.3 on win32)" generated="2025-06-26T19:28:00.573676" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.1 (Python 3.13.3 on win32)" generated="2025-06-26T21:26:37.005796" rpa="false" schemaversion="5">
 <suite id="s1" name="chilangoWebPOC" source="C:\Users\angyD\OneDrive\Documentos\PROGRAM\chilangoWebPOC">
 <suite id="s1-s1" name="Test" source="C:\Users\angyD\OneDrive\Documentos\PROGRAM\chilangoWebPOC\test">
 <suite id="s1-s1-s1" name="Chilango" source="C:\Users\angyD\OneDrive\Documentos\PROGRAM\chilangoWebPOC\test\chilango">
 <suite id="s1-s1-s1-s1" name="Chilango Test" source="C:\Users\angyD\OneDrive\Documentos\PROGRAM\chilangoWebPOC\test\chilango\chilango_test.robot">
-<test id="s1-s1-s1-s1-t1" name="CHI_04 - LogIn Page" line="54">
+<test id="s1-s1-s1-s1-t1" name="CHI_04 - LogIn Page" line="45">
 <kw name="Begin Web Test" owner="common_web" type="SETUP">
 <kw name="Open Browser" owner="Selenium2Library">
-<msg time="2025-06-26T19:28:00.955108" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg time="2025-06-26T21:26:37.341585" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <arg>options=add_argument("--inprivate"); add_argument("--ignore-certificate-errors")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-26T19:28:00.954379" elapsed="1.293778"/>
+<status status="PASS" start="2025-06-26T21:26:37.341386" elapsed="1.183364"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2025-06-26T19:28:02.248783" level="INFO">${URL} = https://www.chilango.com/</msg>
+<msg time="2025-06-26T21:26:38.525223" level="INFO">${URL} = https://www.chilango.com/</msg>
 <var>${URL}</var>
 <arg>${PAGE}</arg>
 <arg>${ENVIRONMENT}</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2025-06-26T19:28:02.248504" elapsed="0.000318"/>
+<status status="PASS" start="2025-06-26T21:26:38.524970" elapsed="0.000284"/>
 </kw>
 <kw name="Go To" owner="Selenium2Library">
-<msg time="2025-06-26T19:28:02.249083" level="INFO">Opening url 'https://www.chilango.com/'</msg>
+<msg time="2025-06-26T21:26:38.525566" level="INFO">Opening url 'https://www.chilango.com/'</msg>
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-06-26T19:28:02.248959" elapsed="2.731742"/>
+<status status="PASS" start="2025-06-26T21:26:38.525387" elapsed="2.600782"/>
 </kw>
 <kw name="Maximize Browser Window" owner="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-26T19:28:04.980992" elapsed="0.036055"/>
+<status status="PASS" start="2025-06-26T21:26:41.126360" elapsed="0.068135"/>
 </kw>
 <kw name="Set Selenium Speed" owner="Selenium2Library">
 <arg>0.5s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2025-06-26T19:28:05.017346" elapsed="0.000296"/>
+<status status="PASS" start="2025-06-26T21:26:41.194774" elapsed="0.000361"/>
 </kw>
 <doc>This keyword helps set up all our test cases dynamically</doc>
-<status status="PASS" start="2025-06-26T19:28:00.952013" elapsed="4.065738"/>
+<status status="PASS" start="2025-06-26T21:26:37.340838" elapsed="3.854434"/>
 </kw>
 <kw name="Wait For Condition" owner="Selenium2Library">
 <arg>return document.readyState == "complete"</arg>
 <arg>${TIME}</arg>
 <doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" start="2025-06-26T19:28:05.019674" elapsed="0.516840"/>
+<status status="PASS" start="2025-06-26T21:26:41.195726" elapsed="0.553877"/>
 </kw>
+<kw name="LogIn Page" owner="chilango_page">
 <kw name="Wait Until Element Is Visible" owner="Selenium2Library">
 <arg>${chilango_locators.login_button}</arg>
 <arg>${TIME}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-26T19:28:05.537005" elapsed="1.061839"/>
+<status status="PASS" start="2025-06-26T21:26:41.750866" elapsed="1.069383"/>
 </kw>
 <kw name="Click Element" owner="Selenium2Library">
-<msg time="2025-06-26T19:28:06.601194" level="INFO">Clicking element 'xpath=//a[text()="Inicia Sesión"]'.</msg>
+<msg time="2025-06-26T21:26:42.821969" level="INFO">Clicking element 'xpath=//a[text()="Inicia Sesión"]'.</msg>
 <arg>${chilango_locators.login_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-26T19:28:06.599741" elapsed="2.205623"/>
+<status status="PASS" start="2025-06-26T21:26:42.820725" elapsed="2.022310"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="Selenium2Library">
 <arg>locator=//a[contains(text(), "Registrate")]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-26T19:28:08.806268" elapsed="1.043823"/>
+<status status="PASS" start="2025-06-26T21:26:44.843253" elapsed="1.032385"/>
+</kw>
+<status status="PASS" start="2025-06-26T21:26:41.750396" elapsed="4.125497"/>
 </kw>
 <kw name="End Web Test" owner="common_web" type="TEARDOWN">
 <kw name="Close All Browsers" owner="Selenium2Library">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-06-26T19:28:09.852194" elapsed="2.739444"/>
+<status status="PASS" start="2025-06-26T21:26:45.876768" elapsed="2.645059"/>
 </kw>
 <doc>This keyword close the browser</doc>
-<status status="PASS" start="2025-06-26T19:28:09.851322" elapsed="2.740633"/>
+<status status="PASS" start="2025-06-26T21:26:45.876498" elapsed="2.645676"/>
 </kw>
 <doc>Test LogIn page on Chilango</doc>
 <tag>CHI_04</tag>
 <tag>Chilango</tag>
-<status status="PASS" start="2025-06-26T19:28:00.949844" elapsed="11.642734"/>
+<status status="PASS" start="2025-06-26T21:26:37.340057" elapsed="11.182696"/>
 </test>
 <doc>Chilango Test Suite
 Chilango home page -&gt; https://www.chilango.com/</doc>
-<status status="PASS" start="2025-06-26T19:28:00.612901" elapsed="11.981863"/>
+<status status="PASS" start="2025-06-26T21:26:37.034031" elapsed="11.490615"/>
 </suite>
-<status status="PASS" start="2025-06-26T19:28:00.611419" elapsed="11.986494"/>
+<status status="PASS" start="2025-06-26T21:26:37.032794" elapsed="11.494466"/>
 </suite>
-<status status="PASS" start="2025-06-26T19:28:00.609772" elapsed="11.990715"/>
+<status status="PASS" start="2025-06-26T21:26:37.031024" elapsed="11.498360"/>
 </suite>
-<status status="PASS" start="2025-06-26T19:28:00.576059" elapsed="12.026587"/>
+<status status="PASS" start="2025-06-26T21:26:37.007314" elapsed="11.524160"/>
 </suite>
 <statistics>
 <total>
