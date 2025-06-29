@@ -13,3 +13,5 @@ chilango_locators:
  login_button:             xpath=//a[text()="Inicia Sesión"]
  title_news:               xpath=//h1[@class="entry-title"]
  minimize_button:          xpath=//span[@class='RC-Close']
+ pause_button:             xpath=//div[@class='stop hidden']
+

@@ -54,3 +54,8 @@ Click on LogIn Button
 Click on Minimize Button
     Wait Until Element Is Visible    ${chilango_locators.minimize_button}    ${TIME}
     Click Element                    ${chilango_locators.minimize_button}
+
+Click on Play Radio Button
+    Wait Until Element Is Visible    ${chilango_locators.play_button}    ${TIME}
+    Click Element                    ${chilango_locators.play_button}
+    Wait Until Element Is Visible    ${chilango_locators.pause_button}    ${TIME}
