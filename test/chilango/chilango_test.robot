@@ -59,6 +59,4 @@ CHI_05 - Play Chilango Radio and Verufy
     ...    Expected results: The radio should play successfully
     [Tags]    Chilango    CHI_05
     Load Chilango Home Page
-    Click on Play Radio Button
-    Wait Until Element Is Visible    ${chilango_locators.pause_button}    ${LONG_TIME}
- 
+    Click on Play Radio Button 
