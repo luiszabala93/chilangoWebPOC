@@ -50,7 +50,23 @@ CHI_04 - LogIn Page
     ...    Expected results: The page should load successfully
     [Tags]    Chilango    CHI_04
     Load Chilango Home Page
-    Get evidence
     Click on LogIn Button
     Load Login Page
-    Get evidence
+
+CHI_05 - Play Chilango Radio and Verufy
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that Chilango Radio is played successfully
+    ...    Expected results: The radio should play successfully
+    [Tags]    Chilango    CHI_05
+    Load Chilango Home Page
+    Click on Play Radio Button 
+
+CH_06 - Minimize and Maximize Chilango Radio
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that Chilango Radio can be minimized and maximized successfully
+    ...    Expected results: The radio should minimize and maximize successfully
+    [Tags]    Chilango    CHI_06
+    Load Chilango Home Page
+    Click on Minimize Radio Button
+    Click on Maximize Radio Button
+    
