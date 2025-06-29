@@ -60,4 +60,5 @@ CHI_05 - Play Chilango Radio and Verufy
     [Tags]    Chilango    CHI_05
     Load Chilango Home Page
     Click on Play Radio Button
+    Wait Until Element Is Visible    ${chilango_locators.pause_button}    ${LONG_TIME}
  
