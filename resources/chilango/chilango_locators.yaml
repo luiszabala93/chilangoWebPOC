@@ -14,4 +14,6 @@ chilango_locators:
  title_news:               xpath=//h1[@class="entry-title"]
  minimize_button:          xpath=//span[@class='RC-Close']
  pause_button:             xpath=//div[@class='stop hidden']
+ maximize_button:          xpath=//div[@class="RC-Icon"]
+ chilango_radio:           xpath=//a[@href="https://chilangoradio.com"]
 

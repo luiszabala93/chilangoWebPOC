@@ -60,3 +60,13 @@ CHI_05 - Play Chilango Radio and Verufy
     [Tags]    Chilango    CHI_05
     Load Chilango Home Page
     Click on Play Radio Button 
+
+CH_06 - Minimize and Maximize Chilango Radio
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that Chilango Radio can be minimized and maximized successfully
+    ...    Expected results: The radio should minimize and maximize successfully
+    [Tags]    Chilango    CHI_06
+    Load Chilango Home Page
+    Click on Minimize Radio Button
+    Click on Maximize Radio Button
+    
