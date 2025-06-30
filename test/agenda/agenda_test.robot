@@ -39,9 +39,42 @@ AGN_02 - Search Jazz In Agenda Page
 AGN_03 - Click In More Events Until no More Events Loaded
     [Documentation]    Clicks the "Mas eventos"'s Button Until the Button is not Visible
     [Tags]    Agenda    AGN_03
-    Click On More Events Until Is Not Visible
+    Load Agenda Home Page
+    Click On Button Until Is Not Visible
+    Sleep    10    
 
-AGN_04 - Click An Event And Wait A Page to Load
-    [Documentation]    Click an event's image and waits Until the event's calendar appears
+AGN_04 - Agenda Page From Chilango Page
+    [Documentation]    Goes from chilango main page to agenda a secundary page
     [Tags]    Agenda    AGN_04
-    Click Event And Wait For Calendar
+    Load Chilango Home Page
+    Click Span In Page     navbar-toggler-icon
+    Wait Image Visible     Agenda
+    Click Image In Page    Agenda
+    Load Agenda Home Page
+    Sleep    10
+
+AGN_05 - Click On Category And Validates Color Change
+    [Documentation]    Selects a category and validates the color asked
+    [Tags]    Agenda    AGN_05
+    Sleep    10
+
+AGN_06 - Click On Category And Validates Sub Categories
+    [Documentation]    Selects a category and validates the sub categries appears
+    [Tags]    Agenda    AGN_06
+    Sleep    10
+
+AGN_07 - Validates Recomendation Message
+    [Documentation]    Validates the appears of the pop up help message
+    [Tags]    Agenda    AGN_07
+    Sleep    10
+
+AGN_08 - Validates Slide Filter Option
+    [Documentation]    Validates the appears of the slide filter Option
+    [Tags]    Agenda    AGN_08
+    Sleep    10
+
+AGN_09 - Validates Event Day Color Change In Event Calendar
+    [Documentation]    Validates the change of the color after the selection of a arbitrary number in calendario_button_agenda
+    [Tags]    Agenda    AGN_09    
+    Sleep    10
+    
