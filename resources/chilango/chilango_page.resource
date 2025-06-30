@@ -18,31 +18,51 @@ Load Chilango Home Page
     Wait Until Element Is Visible    ${chilango_locators.inicia_sesion_link}     ${TIME}
 
 Input Text In Search Field
-    [Arguments]    ${text}
-    Wait For Condition           return document.readyState == "complete"    ${TIME}
+    [Arguments]    ${TEXT}
+    Wait For Condition           return document.readyState == "complete"            ${TIME}
     Wait Until Element Is Visible    ${chilango_locators.principal_search_button}    ${TIME}
-    Click Element    ${chilango_locators.principal_search_button}    
-    Wait Until Element Is Visible   ${chilango_locators.search_input}    ${TIME}
-    Input Text    ${chilango_locators.search_input}                      ${text}
+    Click Element                    ${chilango_locators.principal_search_button}    
+    Wait Until Element Is Visible    ${chilango_locators.search_input}               ${TIME}
+    Input Text                       ${chilango_locators.search_input}               ${TEXT}
 
 Click Search Button And Wait For Results
-    [Arguments]    ${text}
-    Click Element    ${chilango_locators.search_button2}
-    Wait Until Page Contains    ${text}    timeout=${TIME}
-
+    [Arguments]    ${TEXT}    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath Title From Chilango    ${TITLE}
+    Wait Until Element Is Visible    ${chilango_locators.search_button2}    ${TIME}
+    Click Element                    ${chilango_locators.search_button2}
+    Wait Until Element Is Visible    ${XPATH}    ${TIME}
+    
 Select News From Search Results
-    [Arguments]    ${text}
-    Wait Until Element Is Visible     ${chilango_locators.tim_burton_news_link}    ${TIME}
-    Scroll Element Into View          ${chilango_locators.tim_burton_news_link}
-    Click Element                     ${chilango_locators.tim_burton_news_link}
-    Wait Until Page Contains          ${text}  ${TIME}   
+    [Arguments]    ${TEXT}
+    ${XPATH} =    create_xpath.Obtain Xpath Title From Chilango    ${TEXT}
+    Wait Until Element Is Visible     ${XPATH}    ${TIME}
+    Scroll Element Into View          ${XPATH}
+    Execute JavaScript    document.body.style.zoom="60%"
+    Click Element                     ${XPATH}
+    Wait Until Page Contains          ${TEXT}  ${TIME}
+    Scroll Element Into View          ${chilango_locators.title_news}
 
 Close Banner If Visible
-    Run Keyword And Ignore Error    Wait Until Element Is Visible    ${chilango_locators.close_banner}    ${TIME}
-    Run Keyword And Ignore Error    Click Element                    ${chilango_locators.close_banner}
-    Run Keyword And Ignore Error    Wait Until Element Is Not Visible    ${chilango_locators.close_banner}    ${TIME}
+    Wait Until Element Is Visible        ${chilango_locators.close_banner}   ${TIME}
+    Click Element                        ${chilango_locators.close_banner}
+    Wait Until Element Is Not Visible    ${chilango_locators.close_banner}    ${TIME}
 
-LogIn Page
+Click on LogIn Button
     Wait Until Element Is Visible   ${chilango_locators.login_button}   ${TIME}
-    Click Element    ${chilango_locators.login_button}   
-    Wait Until Element Is Visible    locator=//a[contains(text(), "Registrate")]
+    Click Element                   ${chilango_locators.login_button}   
+
+Click on Minimize Radio Button
+    Wait Until Element Is Visible    ${chilango_locators.minimize_button}    ${TIME}
+    Click Element                    ${chilango_locators.minimize_button}
+    Sleep    3s
+
+Click on Play Radio Button
+    Wait Until Element Is Visible    ${chilango_locators.play_button}    ${TIME}
+    Click Element                    ${chilango_locators.play_button}
+    Wait Until Element Is Visible    ${chilango_locators.pause_button}    ${TIME}
+
+Click on Maximize Radio Button
+    Wait Until Element Is Visible    ${chilango_locators.maximize_button}    ${TIME}
+    Click Element                    ${chilango_locators.maximize_button}
+    Wait Until Element Is Visible    ${chilango_locators.chilango_radio}    ${TIME}
+    Sleep     3s

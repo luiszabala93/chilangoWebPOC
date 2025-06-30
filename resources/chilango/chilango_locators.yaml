@@ -11,3 +11,9 @@ chilango_locators:
  tim_burton_news_link:     xpath=//div[contains(@class, "titlehOme")]//a[contains(@href, "tim-burton-laberinto-en-cdmx")]
  close_banner:             xpath=//div[contains(@class, "closeAlert")]
  login_button:             xpath=//a[text()="Inicia Sesión"]
+ title_news:               xpath=//h1[@class="entry-title"]
+ minimize_button:          xpath=//span[@class='RC-Close']
+ pause_button:             xpath=//div[@class='stop hidden']
+ maximize_button:          xpath=//div[@class="RC-Icon"]
+ chilango_radio:           xpath=//a[@href="https://chilangoradio.com"]
+

@@ -1,0 +1,4 @@
+login_locators:
+  # Login Page
+  label_registrate:            xpath=//a[contains(text(), "Registrate")]
+  
