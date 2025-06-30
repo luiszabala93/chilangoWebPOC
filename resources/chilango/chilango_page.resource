@@ -54,7 +54,6 @@ Click on LogIn Button
 Click on Minimize Radio Button
     Wait Until Element Is Visible    ${chilango_locators.minimize_button}    ${TIME}
     Click Element                    ${chilango_locators.minimize_button}
-    Sleep    3s
 
 Click on Play Radio Button
     Wait Until Element Is Visible    ${chilango_locators.play_button}    ${TIME}
@@ -65,4 +64,3 @@ Click on Maximize Radio Button
     Wait Until Element Is Visible    ${chilango_locators.maximize_button}    ${TIME}
     Click Element                    ${chilango_locators.maximize_button}
     Wait Until Element Is Visible    ${chilango_locators.chilango_radio}    ${TIME}
-    Sleep     3s

@@ -16,4 +16,3 @@ chilango_locators:
  pause_button:             xpath=//div[@class='stop hidden']
  maximize_button:          xpath=//div[@class="RC-Icon"]
  chilango_radio:           xpath=//a[@href="https://chilangoradio.com"]
-
