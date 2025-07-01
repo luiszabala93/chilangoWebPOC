@@ -53,7 +53,7 @@ CHI_04 - LogIn Page
     Click on LogIn Button
     Load Login Page
 
-CHI_05 - Play Chilango Radio and Verufy
+CHI_05 - Play Chilango Radio and Verify That It Is Playing
     [Documentation]    Positive Test Case:
     ...    This test case verify that Chilango Radio is played successfully
     ...    Expected results: The radio should play successfully
@@ -103,6 +103,7 @@ CHI_09 - Missing Password
     Input Text In Email Field    ${MAIL}
     Click on Login Button Inside The Login Page
     Location Should Be           ${PAGE.LOGIN}
+
 CHI_10 - Missing Email
     [Documentation]    Positive Test Case:
     ...    This test case verify that the Chilango page is loaded successfully
