@@ -90,3 +90,16 @@ CHI 08 - @ Missing In The Mail
     Input Text In Email Field    ${MAIL}
     Click on Login Button Inside The Login Page
     Location Should Be           ${PAGE.LOGIN}
+
+CHI_09 - Missing Password
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the Chilango page is loaded successfully
+    ...    Expected results: The page should load successfully
+    [Tags]    Chilango    CHI_09
+    ${MAIL} =    Set Variable    angy@gmail.com
+    Load Chilango Home Page
+    Click on LogIn Button
+    Load Login Page
+    Input Text In Email Field    ${MAIL}
+    Click on Login Button Inside The Login Page
+    Location Should Be           ${PAGE.LOGIN}
