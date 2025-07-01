@@ -69,4 +69,11 @@ CH_06 - Minimize and Maximize Chilango Radio
     Load Chilango Home Page
     Click on Minimize Radio Button
     Click on Maximize Radio Button
-    
+
+CHI_07 - Mute Chilango Radio
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that Chilango Radio can be muted successfully
+    ...    Expected results: The radio should mute successfully
+    [Tags]    Chilango    CHI_07
+    Load Chilango Home Page
+    Click on Mute Radio Button
