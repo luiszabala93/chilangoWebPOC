@@ -77,3 +77,16 @@ CHI_07 - Mute Chilango Radio
     [Tags]    Chilango    CHI_07
     Load Chilango Home Page
     Click on Mute Radio Button
+
+CHI 08 - @ Missing In The Mail
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the Chilango page is loaded successfully
+    ...    Expected results: The page should load successfully
+    [Tags]    Chilango    CHI_08
+    ${MAIL} =    Set Variable    angygmail.com
+    Load Chilango Home Page
+    Click on LogIn Button
+    Load Login Page
+    Input Text In Email Field    ${MAIL}
+    Click on Login Button Inside The Login Page
+    Location Should Be           ${PAGE.LOGIN}

@@ -18,7 +18,11 @@ Input Text In Email Field
     Wait Until Element Is Visible    ${login_locators.email_input}               ${TIME}
     Input Text                       ${login_locators.email_input}               ${EMAIL}
 
-Click on Register Button
-    Wait Until Element Is Visible    ${login_locators.label_registrate}          ${TIME}
-    Click Element                    ${login_locators.label_registrate}
-    Wait Until Page Contains         "Registrate"                               ${TIME}
+Input Text In Password Field
+    [Arguments]    ${PASSWORD}        
+    Wait Until Element Is Visible    ${login_locators.password_input}            ${TIME}
+    Input Text                       ${login_locators.password_input}            ${PASSWORD}
+
+Click on Login Button Inside The Login Page
+    Wait Until Element Is Visible    ${login_locators.login_button_Inside}          ${TIME}
+    Click Element                    ${login_locators.login_button_Inside}
