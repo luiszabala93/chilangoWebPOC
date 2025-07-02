@@ -34,18 +34,18 @@ Click On Search Event And Search An Event
     Input Text                       ${agenda_locators.search_input_agenda}          ${TEXT}
     Press Keys                       ${agenda_locators.search_input_agenda}          ENTER
 
-Click On Event Found
+Click On Event
     [Arguments]    ${TITLE}
-    ${XPATH} =    create_xpath.Obtain Xpath Image     ${TITLE}
-    Wait Until Element Is Visible    ${XPATH}         ${TIME}
-    Click Element                    ${XPATH}
+    ${XPATH} =    create_xpath.Obtain Xpath Image         ${TITLE}
+    Wait Until Element Is Visible                         ${XPATH}                   ${TIME}
+    Click Element                                         ${XPATH}
 
 Click On Button Until Is Not Visible
     [Arguments]    ${TITLE}
     ${i} =     Set Variable    0
-    ${XPATH} =    create_xpath.Obtain Xpath Button    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath Button        ${TITLE}
     Wait For Condition               return document.readyState == "complete"        ${TIME}
-    Wait Until Element Is Visible    ${XPATH}         ${TIME}                                   
+    Wait Until Element Is Visible                         ${XPATH}                   ${TIME}                                   
     WHILE    ${i} = 0
         ${COMO} =     Run Keyword And Ignore Error    Click Element    ${XPATH}
         IF     ${COMO} = 'FAIL'
@@ -57,26 +57,53 @@ Click On Button Until Is Not Visible
 
 Click Image In Page
     [Arguments]    ${TITLE}
-    ${XPATH} =    create_xpath.Obtain Xpath Image    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath Image        ${TITLE}
     Wait For Condition               return document.readyState == "complete"        ${TIME}
-    Wait Until Element Is Visible    ${XPATH}
-    Click Element                    ${XPATH}    
+    Wait Until Element Is Visible                        ${XPATH}
+    Click Element                                        ${XPATH}    
 
 Click Button In Page
     [Arguments]    ${TITLE}
-    ${XPATH} =    create_xpath.Obtain Xpath Button    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath Button        ${TITLE}
     Wait For Condition               return document.readyState == "complete"        ${TIME}
-    Wait Until Element Is Visible    ${XPATH}
-    Click Element                    ${XPATH}   
+    Wait Until Element Is Visible                         ${XPATH}
+    Click Element                                         ${XPATH}   
 
-Click Span In Page
+Click Span Class In Page
     [Arguments]    ${TITLE}
-    ${XPATH} =    create_xpath.Obtain Xpath Span    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath Span Class    ${TITLE}
     Wait For Condition               return document.readyState == "complete"        ${TIME}
-    Wait Until Element Is Visible    ${XPATH}
-    Click Element                    ${XPATH}   
+    Wait Until Element Is Visible                         ${XPATH}
+    Click Element                                         ${XPATH}   
 
 Wait Image Visible
     [Arguments]    ${TITLE}
-    ${XPATH} =    create_xpath.Obtain Xpath Image    ${TITLE}
-    Wait Until Element Is Visible    &{XPATH}
+    ${XPATH} =    create_xpath.Obtain Xpath Image         ${TITLE}
+    Wait Until Element Is Visible                         ${XPATH}
+
+Validates P Object Present
+    [Arguments]    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath P             ${TITLE}
+    Wait Until Element Is Visible                         ${XPATH}    
+
+Click Span Name In Page
+    [Arguments]    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath Span Name     ${TITLE}
+    Wait Until Element Is Visible                         ${XPATH}
+    Click Element                                         ${XPATH}
+
+Validates Span Contains In Page
+    [Arguments]    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath Span Name     ${TITLE}
+    Wait Until Element Is Visible                         ${XPATH}
+
+Click Button Class In Page
+    [Arguments]    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath Button Class  ${TITLE}
+    Wait Until Element Is Visible                         ${XPATH}
+    Click Element                                         ${XPATH}
+
+Validates Button Visible
+    [Arguments]    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath Button        ${TITLE}
+    Wait Until Element Is Visible                         ${XPATH}

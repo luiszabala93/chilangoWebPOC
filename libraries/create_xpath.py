@@ -11,8 +11,17 @@ def obtain_xpath_image(image):
 def obtain_xpath_button(button):
     return "//button[contains(., '" + button + "')]"
 
-def obtain_xpath_span(span):
+def obtain_xpath_span_class(span):
     return "//span[@class = '" + span + "']"
 
 def obtain_xpath_p(p):
     return "//p[contains(.,'" + p + "')]"
+
+def obtain_xpath_span_name(span_name):
+    return "//span[contains(.,'" + span_name + "')]"
+
+def obtain_xpath_button_class(button_class):
+    return "//button[@class = '" + button_class + "']"
+
+def obtain_xpath_div_class(div_class):
+    return 0
