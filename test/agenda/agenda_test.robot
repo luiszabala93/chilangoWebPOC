@@ -27,7 +27,6 @@ AGN_01 - Agenda Home Page Is Loaded
     [Documentation]    Test Agenda home page is loaded correctly
     [Tags]    Agenda    AGN_01
     Load Agenda Home Page
-    Sleep    10
 
 AGN_02 - Search Jazz In Agenda Page
     [Documentation]    Test the search Button and the search action to find jazz events on the agenda page
@@ -35,14 +34,12 @@ AGN_02 - Search Jazz In Agenda Page
     Load Agenda Home Page
     Click On search Event And Search An Event    Jazz
     Click On Event    We call it Jazz: Un Viaje al Corazón de Nueva Orleans
-    Sleep    10
 
 AGN_03 - Click In More Events Until no More Events Loaded
     [Documentation]    Clicks the "Mas eventos"'s Button Until the Button is not Visible
     [Tags]    Agenda    AGN_03
     Load Agenda Home Page
-    Click On Button Until Is Not Visible
-    Sleep    10    
+    Click On Button Until Is Not Visible   
 
 AGN_04 - Agenda Page From Chilango Page
     [Documentation]    Goes from chilango main page to agenda a secundary page
@@ -51,14 +48,12 @@ AGN_04 - Agenda Page From Chilango Page
     Click Span Class In Page     navbar-toggler-icon
     Wait Image Visible     Agenda
     Click Image In Page    Agenda
-    Sleep    10
 
 AGN_05 - Click On Category And Validates Color Change
     [Documentation]    Selects a category and validates the color of that category
     [Tags]    Agenda    AGN_05
     Load Agenda Home Page
     Click Span Name In Page    Música
-    Sleep    10
 
 AGN_06 - Click On Category And Validates Sub Categories
     [Documentation]    Selects a category and validates the sub categories appears
@@ -66,14 +61,12 @@ AGN_06 - Click On Category And Validates Sub Categories
     Load Agenda Home Page
     Click Span Name In Page    Música
     Validates Span Contains In Page    (2) 
-    Sleep    10
 
 AGN_07 - Validates Recomendation Message
     [Documentation]    Validates the appears of the pop up help message
     [Tags]    Agenda    AGN_07
     Load Agenda Home Page
     Validates P Object Present    ¿Buscas un plan con niños, en pareja o con amigos?
-    Sleep    10
 
 AGN_08 - Validates Slide Filter Option
     [Documentation]    Validates the appears of the slide filter Option
@@ -81,7 +74,6 @@ AGN_08 - Validates Slide Filter Option
     Load Agenda Home Page
     Click Button Class In Page    md:inline-flex hidden items-center justify-center cursor-pointer
     Validates Button Visible    Con amigos
-    Sleep    10
 
 AGN_09 - Validates Event Day Color Change In Event Calendar
     [Documentation]    Validates the change of the color after the selection of a arbitrary number in calendario_button_agenda
@@ -89,4 +81,3 @@ AGN_09 - Validates Event Day Color Change In Event Calendar
     Load Agenda Home Page
     Click On Event    El Sótano
 
-    Sleep    10
