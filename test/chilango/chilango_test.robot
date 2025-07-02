@@ -50,7 +50,69 @@ CHI_04 - LogIn Page
     ...    Expected results: The page should load successfully
     [Tags]    Chilango    CHI_04
     Load Chilango Home Page
-    Get evidence
     Click on LogIn Button
     Load Login Page
-    Get evidence
+
+CHI_05 - Play Chilango Radio and Verify That It Is Playing
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that Chilango Radio is played successfully
+    ...    Expected results: The radio should play successfully
+    [Tags]    Chilango    CHI_05
+    Load Chilango Home Page
+    Click on Play Radio Button 
+
+CH_06 - Minimize and Maximize Chilango Radio
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that Chilango Radio can be minimized and maximized successfully
+    ...    Expected results: The radio should minimize and maximize successfully
+    [Tags]    Chilango    CHI_06
+    Load Chilango Home Page
+    Click on Minimize Radio Button
+    Click on Maximize Radio Button
+
+CHI_07 - Mute Chilango Radio
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that Chilango Radio can be muted successfully
+    ...    Expected results: The radio should mute successfully
+    [Tags]    Chilango    CHI_07
+    Load Chilango Home Page
+    Click on Mute Radio Button
+
+CHI 08 - @ Missing In The Mail
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the Chilango page is loaded successfully
+    ...    Expected results: The page should load successfully
+    [Tags]    Chilango    CHI_08
+    ${MAIL} =    Set Variable    angygmail.com
+    Load Chilango Home Page
+    Click on LogIn Button
+    Load Login Page
+    Input Text In Email Field    ${MAIL}
+    Click on Login Button Inside The Login Page
+    Location Should Be           ${PAGE.LOGIN}
+
+CHI_09 - Missing Password
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the Chilango page is loaded successfully
+    ...    Expected results: The page should load successfully
+    [Tags]    Chilango    CHI_09
+    ${MAIL} =    Set Variable    angy@gmail.com
+    Load Chilango Home Page
+    Click on LogIn Button
+    Load Login Page
+    Input Text In Email Field    ${MAIL}
+    Click on Login Button Inside The Login Page
+    Location Should Be           ${PAGE.LOGIN}
+
+CHI_10 - Missing Email
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the Chilango page is loaded successfully
+    ...    Expected results: The page should load successfully
+    [Tags]    Chilango    CHI_10
+    ${PASSWORD} =    Set Variable    angy1234
+    Load Chilango Home Page
+    Click on LogIn Button
+    Load Login Page
+    Input Text In Password Field    ${PASSWORD}
+    Click on Login Button Inside The Login Page
+    Location Should Be              ${PAGE.LOGIN}

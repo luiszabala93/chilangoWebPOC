@@ -1,4 +1,7 @@
 login_locators:
   # Login Page
   label_registrate:            xpath=//a[contains(text(), "Registrate")]
+  email_input:                 xpath=//input[@id="email"]
+  password_input:              xpath=//input[@id="password"]
+  login_button_Inside:         xpath=//button
   
