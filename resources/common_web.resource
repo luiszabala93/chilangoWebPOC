@@ -1,100 +1,48 @@
 *** Settings ***
-Library    Selenium2Library
-Library    Collections
-Library    String
-Library    ../libraries/pdf_report_code.py
+Library     Selenium2Library
+Library     ScreenCapLibrary
+Library     Collections
+Library     String
+Library     OperatingSystem
+Library     ../libraries/remove_files.py
 
 Resource    ../data/platform_urls.robot
 
 *** Variables ***
-${BROWSER}
-${BROWSER_NAV}
+${BROWSER} =    chrome
 ${ENVIRONMENT}
-${TEST_DATA_PATH}
-${REPORT}
+${REPORT} =     FALSE
 
 *** Keywords ***
 Begin Web Test
     [Documentation]    This keyword helps set up all our test cases dynamically
-    [Arguments]    ${TEST_PATH}    ${BROWSER_NAME}=True
-    Prepare Environment    ${TEST_PATH}    ${BROWSER_NAME}
+    [Arguments]    ${TEST_PATH}
+    ${PATH} =      Set Variable    ${TEST_PATH}
+    ${NAME} =      Set Variable    ${TEST TAGS}[0]
+    Create Directory    results/videos/${PATH}
     Open Browser    about:blank    ${BROWSER}    options=add_argument("--inprivate"); add_argument("--ignore-certificate-errors")
+    remove_files.Remove Files
+    Set Selenium Speed    0.1s
+    IF  '${REPORT}'.lower() == 'true' 
+        Start video recording    name=videos/${PATH}/${NAME}
+    ELSE
+        Log   Video recording is disabled
+    END
     ${URL} =    Collections.Get From Dictionary    ${PAGE}    ${ENVIRONMENT}
     Go To    ${URL}
     Maximize Browser Window
-   # Set Selenium Speed    0.5s
-
+   
 End Web Test
     [Documentation]    This keyword close the browser
-    ${FAILED_PATH} =     pdf_report_code.Get Failed Evidence Path 
-    Run Keyword If Test Failed    Run Keywords
-    ...    pdf_report_code.Remove Tc Directory Temporary Files    AND
-    ...    pdf_report_code.Save Evidence If Test Failed    AND
+    ${NAME} =    Set Variable    ${TEST TAGS}[0]
+    ${ENVI} =    Set Variable    ${ENVIRONMENT}
+    ${FAILED_PATH} =    Set Variable    results/failed/${ENVI}/${NAME}
+    Run keyword If Test Failed    Run Keywords
     ...    Selenium2Library.Set Screenshot Directory    ${FAILED_PATH}    AND
     ...    Capture Page Screenshot
+    IF  '${REPORT}'.lower() == 'true' 
+        Stop video recording
+    ELSE
+        Log   Video recording is disabled
+    END
     Close All Browsers
-    Run Keyword If Test Passed    Run Keywords
-    ...    Create Pdf Report
-    ...    pdf_report_code.Remove Tc Directory Temporary Files
-
-Prepare Environment
-    [Arguments]    ${TEST_PATH}    ${BROWSER_NAME}
-    IF    'Env:${ENVIRONMENT}'=='Env:'
-        Set Suite Variable    ${ENVIRONMENT}    INT
-    END
-    IF    'Browser:${BROWSER}'=='Browser:'
-        Set Suite Variable    ${BROWSER}    chrome
-    END
-    IF    ${BROWSER_NAME}
-        Get Current Browser
-    END
-    IF    'Rep:${REPORT}' != 'Rep:'
-        ${REPORT} =    String.Convert To_Upper Case    ${REPORT}
-        set suite variable    ${REPORT}    ${REPORT}
-    END
-    ${REPORTS} =    pdf_report_code.Get Reports Directory Path
-    ${SUBFOLDERS} =    String.Split String    ${TEST_DATA_PATH}    \\
-    pdf_report_code.Set Global Environment    ${ENVIRONMENT}
-    pdf_report_code.Create Report Directory On Results Folder    ${REPORTS}    ${SUBFOLDERS}
-    pdf_report_code.Set Test Name    ${TEST_NAME}
-    pdf_report_code.Set Browser Name    ${BROWSER_NAV}
-    Set Suite Variable    ${TEST_DATA_PATH}    ${TEST_PATH}
-    ${SCREENSHOT_DIRECTORY} =    pdf_report_code.Get Screenshots Path
-    Selenium2Library.Set Screenshot Directory    ${SCREENSHOT_DIRECTORY}
-
-Get Current Browser
-    Run Keyword If    "${BROWSER}" == "edge"      set suite variable    ${BROWSER_NAV}    Microsoft Edge
-    Run Keyword If    "${BROWSER}" == "chrome"    set suite variable    ${BROWSER_NAV}    Google Chrome
-    Run Keyword If    "${BROWSER}" == "ff"        set suite variable    ${BROWSER_NAV}    Mozilla Firefox
-    Run Keyword If    "${BROWSER}" == "ie"        set suite variable    ${BROWSER_NAV}    Internet Explorer
-    Run Keyword If    "${BROWSER}" == "opera"     set suite variable    ${BROWSER_NAV}    Opera
-
-Check Browser Before Screenshot
-    Run Keyword If    "${BROWSER_NAV}" != "Mozilla Firefox"    execute javascript    document.body.style.zoom="60%"
-    Run Keyword If    "${BROWSER_NAV}" == "Mozilla Firefox"    execute javascript    document.body.style.MozTransform = "scale(0.4)"
-
-Check Browser After Screenshot
-    Run Keyword If    "${BROWSER_NAV}" != "Mozilla Firefox"    execute javascript    document.body.style.zoom="100%"
-    Run Keyword If    "${BROWSER_NAV}" == "Mozilla Firefox"    execute javascript    document.body.style.MozTransform = "scale(1)"
-
-Create Pdf Report
-    IF    '${REPORT}' == 'TRUE'
-        pdf_report_code.pdf_configuration_setup    ${TEST_DATA_PATH}    ${TEST_NAME}
-        Set Test Message      ${TEST_DATA_PATH}
-        Set Test Message      ${TEST_NAME}
-        ${CODE} =    pdf_report_code.get_test_code
-        ${RESULTS} =    pdf_report_code.get results directory path
-        ${TEST_INFO} =    pdf_report_code.get_test_information    ${TEST_DATA_PATH}    ${TEST_NAME}
-        pdf_report_code.write_test_documentation    ${TEST_INFO}    ${RESULTS}    ${TEST_NAME}
-        pdf_report_code.create report    ${TEST_DATA_PATH}    ${TEST_NAME}    ${ENVIRONMENT}    ${BROWSER_NAV}
-    END
-
-Get evidence
-    [Arguments]    ${TIME_SLEEP}=0    ${ZOOM}=True
-    IF    'Rep:${REPORT}' != 'Rep:'
-        Sleep    ${TIME_SLEEP}
-        Run Keyword If    '${ZOOM}'=='True'    Check Browser Before Screenshot
-        ${NAME} =    pdf_report_code.Get Current Image Name
-        Capture Page Screenshot    ${NAME}.png
-        Run Keyword If    '${ZOOM}'=='True'    Check Browser After Screenshot
-    END

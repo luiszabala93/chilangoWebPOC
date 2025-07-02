@@ -24,5 +24,30 @@ Input Text In Password Field
     Input Text                       ${login_locators.password_input}            ${PASSWORD}
 
 Click on Login Button Inside The Login Page
-    Wait Until Element Is Visible    ${login_locators.login_button_Inside}          ${TIME}
+    Wait Until Element Is Visible    ${login_locators.login_button_Inside}       ${TIME}
     Click Element                    ${login_locators.login_button_Inside}
+
+Text on Screen
+    ${PAGE_TEXT} =    Get Text    tag:body
+    Log    ${PAGE_TEXT}    
+    ${PAGE_SOURCE} =    Get Source
+    Log    ${PAGE_SOURCE}
+
+Obtain Text From JS
+    Sleep    2
+    ${TEXT} =    Execute JavaScript
+    ...    var selectors = ['.toast', '.notification', '.alert', '.error', '.warning',
+    ...        '[role="alert"]', '.swal-modal', '.popup', '.message',
+    ...        '.invalid-feedback', '.error-message', '.validation-error',
+    ...        '.field-error', '.form-error', '.help-block'];
+    ...    for (var sel of selectors) {
+    ...        var element = document.querySelector(sel);
+    ...        if (element && element.textContent.tolowerCase().includes('include')) {
+    ...            return element.textContent;
+    ...        }
+    ...    }
+    ...    If (document.body.textContent.tolowerCase().includes('include')) {
+    ...        return document.body.textContent;
+    ...    }
+    Should Not Be Empty    ${TEXT}    The text does not contain the expected content
+    Log    ${TEXT}

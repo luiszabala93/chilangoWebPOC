@@ -67,8 +67,11 @@ CH_06 - Minimize and Maximize Chilango Radio
     ...    Expected results: The radio should minimize and maximize successfully
     [Tags]    Chilango    CHI_06
     Load Chilango Home Page
+    Capture Page Screenshot
     Click on Minimize Radio Button
+    Capture Page Screenshot
     Click on Maximize Radio Button
+    Capture Page Screenshot
 
 CHI_07 - Mute Chilango Radio
     [Documentation]    Positive Test Case:
@@ -90,6 +93,8 @@ CHI 08 - @ Missing In The Mail
     Input Text In Email Field    ${MAIL}
     Click on Login Button Inside The Login Page
     Location Should Be           ${PAGE.LOGIN}
+    Text on Screen
+    #Obtain Text From JS
 
 CHI_09 - Missing Password
     [Documentation]    Positive Test Case:
