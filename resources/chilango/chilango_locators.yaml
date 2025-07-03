@@ -18,3 +18,4 @@ chilango_locators:
  chilango_radio:           xpath=//a[@href="https://chilangoradio.com"]
  mute_button:              xpath=//*[local-name()='svg' and contains(@class,'volume')]
  unmute_button:            xpath=//*[local-name()='svg' and contains(@class,'mute')]
+ newsletter_button:        xpath=//a[text()="NEWSLETTER"]

@@ -11,6 +11,7 @@ Resource     ../../data/platform_urls.robot
 Resource     ../../resources/chilango/chilango_page.resource
 Resource     ../../resources/common_web.resource
 Resource     ../../resources/chilango/login_page.resource
+Resource     ../../resources/chilango/newsletter_page.resource
 
 Test Setup       Begin Web Test    ${TEST_DATA_PATH}
 Test Teardown    End Web Test
@@ -121,3 +122,13 @@ CHI_10 - Missing Email
     Input Text In Password Field    ${PASSWORD}
     Click on Login Button Inside The Login Page
     Location Should Be              ${PAGE.LOGIN}
+
+CH_11 - Verify That The Newsletter Button Is Working
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the newsletter button is working successfully
+    ...    Expected results: The newsletter button should work successfully
+    [Tags]    Chilango    CHI_11
+    Load Chilango Home Page
+    Click on Newsletter Button
+    Load Newsletter Page
+
