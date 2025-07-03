@@ -36,8 +36,8 @@ CHI_02 - Search Tim Burton's "Laberinto en CDMX" news on Chilango
     ${TEXT1} =    Set Variable    Tim Burton
     ${TITLE} =    Set Variable    Tim Burton Laberinto en CDMX
     Load Chilango Home Page
-    Input Text In Search Field    ${TEXT1}
-    Click Search Button And Wait For Results    ${TEXT1}    ${TITLE}
+    Open Search Field
+    Input Text, Search Button And Wait For Results    ${TEXT1}    ${TITLE}
     Select News From Search Results    ${TITLE}
 
 CHI_03 - Close Banner
@@ -145,5 +145,12 @@ CH_12 - Verify That User Can Suscribe To The Newsletter
     Input Text In Email Field Newsletter       ${MAIL}
     Verify Email Registration
 
-   
-
+CH_13 - Verify That The Search Form Can Be Closed
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the search form can be closed successfully
+    ...    Expected results: The search form should close successfully
+    [Tags]    Chilango    CHI_13
+    Load Chilango Home Page
+    Open Search Field
+    Close Search Form
+    
