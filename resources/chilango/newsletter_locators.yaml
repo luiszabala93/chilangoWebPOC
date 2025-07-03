@@ -1,5 +1,8 @@
 newsletter_locators:
-  newsletter_title:    xpath=//h1[text()="Suscríbete a nuestro newsletter"]
-  email_input:         xpath=//input
-  submit_button:       xpath=//button
-  chilango_logo:       xpath=//a[@href="https://www.chilango.com/"]
+  newsletter_title:        xpath=//h1[text()="Suscríbete a nuestro newsletter"]
+  email_input:             xpath=//input
+  submit_button:           xpath=//button
+  chilango_logo:           xpath=//a[@href="https://www.chilango.com/"]
+  message_check_email:     xpath=//div[@class="thanks"]
+  message_gracias:         xpath=//h1[text()="¡Gracias!"]
+  go_to_home_button:       xpath=//a[@class="button"]

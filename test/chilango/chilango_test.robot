@@ -5,6 +5,7 @@ Documentation    Chilango Test Suite
 Library      Selenium2Library
 Library      Collections
 Library      ../../libraries/create_xpath.py
+Library      ../../libraries/random_names.py
 
 Resource     ../../data/credential_user.robot
 Resource     ../../data/platform_urls.robot
@@ -131,4 +132,18 @@ CH_11 - Verify That The Newsletter Button Is Working
     Load Chilango Home Page
     Click on Newsletter Button
     Load Newsletter Page
+
+CH_12 - Verify That User Can Suscribe To The Newsletter
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that user can subscribe to the newsletter successfully
+    ...    Expected results: The user should be able to subscribe to the newsletter successfully
+    [Tags]    Chilango    CHI_12
+    ${MAIL} =    generate_random_email   
+    Load Chilango Home Page
+    Click on Newsletter Button
+    Load Newsletter Page
+    Input Text In Email Field Newsletter       ${MAIL}
+    Verify Email Registration
+
+   
 
