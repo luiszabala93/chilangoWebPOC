@@ -40,20 +40,18 @@ Click On Event
     Wait Until Element Is Visible                         ${XPATH}                   ${TIME}
     Click Element                                         ${XPATH}
 
+
 Click On Button Until Is Not Visible
     [Arguments]    ${TITLE}
-    ${i} =     Set Variable    0
     ${XPATH} =    create_xpath.Obtain Xpath Button        ${TITLE}
-    Wait For Condition               return document.readyState == "complete"        ${TIME}
-    Wait Until Element Is Visible                         ${XPATH}                   ${TIME}                                   
-    WHILE    ${i} = 0
-        ${COMO} =     Run Keyword And Ignore Error    Click Element    ${XPATH}
-        IF     ${COMO} = 'FAIL'
-                ${i} =      Set Variable    1
-        END
+    Wait For Condition               return document.readyState == "complete"         ${TIME}
+    Wait Until Element Is Visible                         ${XPATH}                    ${TIME}                                   
+    ${VISIBLE} =    Run Keyword And Return Status    Element Should Be Visible        ${XPATH}
+    WHILE    ${VISIBLE}
+        Click Element    ${XPATH}
+        Sleep    1s    
+        ${VISIBLE} =    Run Keyword And Return Status    Element Should Be Visible    ${XPATH}
     END
-    ${COMO}[0]
-
 
 Click Image In Page
     [Arguments]    ${TITLE}
@@ -81,6 +79,11 @@ Wait Image Visible
     ${XPATH} =    create_xpath.Obtain Xpath Image         ${TITLE}
     Wait Until Element Is Visible                         ${XPATH}
 
+Wait A Is Visible
+    [Arguments]    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath A Name    ${TITLE}
+    Wait Until Element Is Visible    ${XPATH}
+
 Validates P Object Present
     [Arguments]    ${TITLE}
     ${XPATH} =    create_xpath.Obtain Xpath P             ${TITLE}
@@ -107,3 +110,8 @@ Validates Button Visible
     [Arguments]    ${TITLE}
     ${XPATH} =    create_xpath.Obtain Xpath Button        ${TITLE}
     Wait Until Element Is Visible                         ${XPATH}
+
+Validates Span In Button Visible
+    [Arguments]    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath Span Button Name    ${TITLE}
+    Wait Until Element Is Visible                               ${XPATH}

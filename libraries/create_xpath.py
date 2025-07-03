@@ -25,3 +25,9 @@ def obtain_xpath_button_class(button_class):
 
 def obtain_xpath_div_class(div_class):
     return 0
+
+def obtain_xpath_span_button_name(span):
+    return "//button/span[contains(., '" + span + "')]"
+
+def obtain_xpath_a_name(a):
+    return "//a[contains(., '" + a + "')]"

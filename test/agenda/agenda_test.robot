@@ -34,12 +34,13 @@ AGN_02 - Search Jazz In Agenda Page
     Load Agenda Home Page
     Click On search Event And Search An Event    Jazz
     Click On Event    We call it Jazz: Un Viaje al Corazón de Nueva Orleans
+    Wait A Is Visible    Comprar boleto
 
 AGN_03 - Click In More Events Until no More Events Loaded
     [Documentation]    Clicks the "Mas eventos"'s Button Until the Button is not Visible
     [Tags]    Agenda    AGN_03
     Load Agenda Home Page
-    Click On Button Until Is Not Visible   
+    Click On Button Until Is Not Visible    Mostrar más eventos 
 
 AGN_04 - Agenda Page From Chilango Page
     [Documentation]    Goes from chilango main page to agenda a secundary page
@@ -54,6 +55,7 @@ AGN_05 - Click On Category And Validates Color Change
     [Tags]    Agenda    AGN_05
     Load Agenda Home Page
     Click Span Name In Page    Música
+    Validates Span In Button Visible    (2)
 
 AGN_06 - Click On Category And Validates Sub Categories
     [Documentation]    Selects a category and validates the sub categories appears
@@ -79,5 +81,7 @@ AGN_09 - Validates Event Day Color Change In Event Calendar
     [Documentation]    Validates the change of the color after the selection of a arbitrary number in calendario_button_agenda
     [Tags]    Agenda    AGN_09
     Load Agenda Home Page
-    Click On Event    El Sótano
+    Click On search Event And Search An Event    El Rey León
+    Click On Event    El Rey León
+    Wait A Is Visible    Comprar boleto
 
