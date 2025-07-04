@@ -27,9 +27,28 @@ def generate_random_email():
     domains = ["gmail.com", "outlook.com", "yahoo.com", "hotmail.com", "live.com", "icloud.com"]
     domain = random.choice(domains)
     email = f"{name.lower()}_{last_name.lower()}@{domain}"
+
     return email
 
 def generate_random_password(length=8):
     characters = string.ascii_letters + string.digits + string.punctuation
     password = ''.join(random.choice(characters) for i in range(length))
+
     return password
+
+def generate_random_phone_number():
+    prefijo = random.choice(["55", "52"])
+    bloque2 = random.randint(1000, 9999)
+    bloque3 = random.randint(1000, 9999)
+    phone_number = f"{prefijo}{bloque2}{bloque3}"
+
+    return phone_number
+
+
+def generate_random_birthdate():
+    year = random.randint(1980, 2020)
+    month = random.randint(1, 12)
+    day = random.randint(1, 28)
+    birthdate = f"{month:02}/{day:02}/{year}"
+
+    return birthdate

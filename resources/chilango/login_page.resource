@@ -63,3 +63,61 @@ Verify Unregistered Email
     Wait Until Element Is Visible    ${login_locators.input_phone}              ${TIME}
     Wait Until Element Is Visible    ${login_locators.input_password}           ${TIME}
     Wait Until Element Is Visible    ${login_locators.password_confirmation}    ${TIME}
+
+Click On Registration Button
+    Wait Until Element Is Visible    ${login_locators.registrarse_button}          ${TIME}
+    Click Element                    ${login_locators.registrarse_button}
+    Wait Until Element Is Visible    ${login_locators.email_entry}              ${TIME}
+    Wait Until Element Is Visible    ${login_locators.email_confirmation}       ${TIME}
+    Wait Until Element Is Visible    ${login_locators.input_name}               ${TIME}
+    Wait Until Element Is Visible    ${login_locators.input_last_name}          ${TIME}
+    Wait Until Element Is Visible    ${login_locators.select_gender}            ${TIME}
+    Wait Until Element Is Visible    ${login_locators.input_birthdate}          ${TIME}
+    Wait Until Element Is Visible    ${login_locators.input_phone}              ${TIME}
+    Wait Until Element Is Visible    ${login_locators.input_password}           ${TIME}
+    Wait Until Element Is Visible    ${login_locators.password_confirmation}    ${TIME}
+
+Fill Email Field
+    [Arguments]    ${EMAIL}
+    Wait Until Element Is Visible    ${login_locators.email_entry}              ${TIME}
+    Input Text                       ${login_locators.email_entry}              ${EMAIL}
+
+Fill Email Confirmation Field
+    [Arguments]    ${EMAIL}
+    Wait Until Element Is Visible    ${login_locators.email_confirmation}       ${TIME}
+    Input Text                       ${login_locators.email_confirmation}       ${EMAIL}
+
+Fill Name Field
+    [Arguments]    ${NAME}
+    Wait Until Element Is Visible    ${login_locators.input_name}               ${TIME}
+    Input Text                       ${login_locators.input_name}               ${NAME}
+
+Fill Last Name Field
+    [Arguments]    ${LAST_NAME}    
+    Wait Until Element Is Visible    ${login_locators.input_last_name}          ${TIME}
+    Input Text                       ${login_locators.input_last_name}          ${LAST_NAME}
+
+Fill Date Of Birth Field
+    [Arguments]    ${DATE}
+    Wait Until Element Is Visible    ${login_locators.input_birthdate}          ${TIME}
+    Click Element                    ${login_locators.input_birthdate}
+    Input Text                       ${login_locators.input_birthdate}          ${DATE}
+
+Fill Phone Field
+    [Arguments]    ${PHONE}
+    Wait Until Element Is Visible    ${login_locators.input_phone}              ${TIME}
+    Input Text                       ${login_locators.input_phone}              ${PHONE}
+
+Fill Password Field
+    [Arguments]    ${PASSWORD}    
+    Wait Until Element Is Visible    ${login_locators.input_password}           ${TIME}
+    Input Text                       ${login_locators.input_password}           ${PASSWORD}
+
+Fill Password Confirmation Field
+    [Arguments]    ${PASSWORD}    
+    Wait Until Element Is Visible    ${login_locators.password_confirmation}    ${TIME}
+    Input Text                       ${login_locators.password_confirmation}    ${PASSWORD}
+
+Select Gender
+    ${INDEX}=    Evaluate    random.randint(1, 4)    modules=random
+    Select From List By Index    ${login_locators.select_gender}    ${INDEX}
