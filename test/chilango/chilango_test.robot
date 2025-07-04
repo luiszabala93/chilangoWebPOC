@@ -202,7 +202,7 @@ CH_16 - Fill Out Registration form
     Fill Password Field                 ${PASSWORD}
     Fill Password Confirmation Field    ${PASSWORD}
     
-CH_17 - Email Has'nt Been Confirmed
+CH_17 - Email Hasn't Been Confirmed
     [Documentation]    Positive Test Case:
     ...    This test case verify that the email hasn't been confirmed
     ...    Expected results: The email should not be confirmed
@@ -243,4 +243,31 @@ CH_18 - Password Is Not correct On LogIn
     Input Text In Password Field    ${PASSWORD}
     Click on Login Button Inside The Login Page
     Password Incorrect Alert
-    
+
+CH_19 - Verify New Account Registration
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the new account registration is successful
+    ...    Expected results: The new account should be registered successfully
+    [Tags]    Chilango    CHI_19
+    ${NAME} =         generate_random_name
+    ${LAST_NAME} =    generate_random_last_name
+    ${MAIL} =         generate_random_email
+    ${PASSWORD} =     generate_random_password
+    ${BIRTHDATE} =    generate_random_birthdate
+    ${PHONE} =        generate_random_phone_number
+    Load Chilango Home Page
+    Click on LogIn Button    
+    Load Login Page
+    Click On Registration Button
+    Fill Email Field                    ${MAIL}
+    Fill Email Confirmation Field       ${MAIL}
+    Fill Name Field                     ${NAME}
+    Fill Last Name Field                ${LAST_NAME}
+    Select Gender
+    Fill Date Of Birth Field            ${BIRTHDATE}
+    Fill Phone Field                    ${PHONE}
+    Fill Password Field                 ${PASSWORD}
+    Fill Password Confirmation Field    ${PASSWORD}
+    Accept Terms And Conditions
+    Click On Create Account Button
+    Verify Registration
