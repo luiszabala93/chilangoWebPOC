@@ -31,14 +31,21 @@ AGN_01 - Agenda Home Page Is Loaded
 AGN_02 - Search Jazz In Agenda Page
     [Documentation]    Test the search Button and the search action to find jazz events on the agenda page
     [Tags]    Agenda    AGN_02
+    ${VAR1} =    Set Variable    Jazz
+    ${VAR2} =    Set Variable    We call it Jazz: Un Viaje al Corazón de Nueva Orleans
     Load Agenda Home Page
-    Click On search Event And Search An Event    Jazz
-    Click On Event    We call it Jazz: Un Viaje al Corazón de Nueva Orleans
+    Click On search Event And Search An Event    ${VAR1}
+    Click On Event    ${VAR2}
     Wait A Is Visible    Comprar boleto
 
 AGN_03 - Click In More Events Until no More Events Loaded
     [Documentation]    Clicks the "Mas eventos"'s Button Until the Button is not Visible
     [Tags]    Agenda    AGN_03
+    Load Chilango Home Page
+    Click Span Class In Page     navbar-toggler-icon
+    Wait Image Visible     Agenda
+    Click Image In Page    Agenda
+    Switch From Chilango To Agenda Page
     Load Agenda Home Page
     Click On Button Until Is Not Visible    Mostrar más eventos 
 
@@ -49,6 +56,8 @@ AGN_04 - Agenda Page From Chilango Page
     Click Span Class In Page     navbar-toggler-icon
     Wait Image Visible     Agenda
     Click Image In Page    Agenda
+    Switch From Chilango To Agenda Page
+    Load Agenda Home Page
 
 AGN_05 - Click On Category And Validates Color Change
     [Documentation]    Selects a category and validates the color of that category

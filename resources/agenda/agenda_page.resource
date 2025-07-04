@@ -67,6 +67,14 @@ Click Button In Page
     Wait Until Element Is Visible                         ${XPATH}
     Click Element                                         ${XPATH}   
 
+Switch From Chilango To Agenda Page
+    Wait For Condition    return document.readyState == "complete"        ${TIME}
+    Switch Window         title=Agenda Chilango
+
+Switch From Agenda To Chilango Page
+    Wait For Condition    return document.readyState == "complete"        ${TIME}
+    Switch Window         MAIN
+
 Click Span Class In Page
     [Arguments]    ${TITLE}
     ${XPATH} =    create_xpath.Obtain Xpath Span Class    ${TITLE}
