@@ -202,9 +202,9 @@ CH_16 - Fill Out Registration form
     Fill Password Field                 ${PASSWORD}
     Fill Password Confirmation Field    ${PASSWORD}
     
-CH_17 - Email Hasn't Been Confirmed
+CH_17 - Email Has not Been Confirmed From Reistrate Form
     [Documentation]    Positive Test Case:
-    ...    This test case verify that the email hasn't been confirmed
+    ...    This test case verify that the email has not been confirmed
     ...    Expected results: The email should not be confirmed
     [Tags]    Chilango    CHI_17
     ${NAME} =         generate_random_name
