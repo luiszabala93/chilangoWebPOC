@@ -17,18 +17,19 @@ Load Chilango Home Page
     Wait Until Element Is Visible    ${chilango_locators.newletter_link}         ${TIME}
     Wait Until Element Is Visible    ${chilango_locators.inicia_sesion_link}     ${TIME}
 
-Input Text In Search Field
-    [Arguments]    ${TEXT}
+Open Search Field
+    [Arguments]
     Wait For Condition           return document.readyState == "complete"            ${TIME}
     Wait Until Element Is Visible    ${chilango_locators.principal_search_button}    ${TIME}
     Click Element                    ${chilango_locators.principal_search_button}    
     Wait Until Element Is Visible    ${chilango_locators.search_input}               ${TIME}
-    Input Text                       ${chilango_locators.search_input}               ${TEXT}
-
-Click Search Button And Wait For Results
+    Wait Until Element Is Visible    ${chilango_locators.close_search}               ${TIME}
+    
+Input Text, Search Button And Wait For Results
     [Arguments]    ${TEXT}    ${TITLE}
     ${XPATH} =    create_xpath.Obtain Xpath Title From Chilango    ${TITLE}
-    Wait Until Element Is Visible    ${chilango_locators.search_button2}    ${TIME}
+    Input Text                       ${chilango_locators.search_input}               ${TEXT}
+    Wait Until Element Is Visible    ${chilango_locators.search_button2}             ${TIME}
     Click Element                    ${chilango_locators.search_button2}
     Wait Until Element Is Visible    ${XPATH}    ${TIME}
     
@@ -43,7 +44,7 @@ Select News From Search Results
     Scroll Element Into View          ${chilango_locators.title_news}
 
 Close Banner If Visible
-    Wait Until Element Is Visible        ${chilango_locators.close_banner}   ${TIME}
+    Wait Until Element Is Visible        ${chilango_locators.close_banner}    ${TIME}
     Click Element                        ${chilango_locators.close_banner}
     Wait Until Element Is Not Visible    ${chilango_locators.close_banner}    ${TIME}
 
@@ -54,24 +55,28 @@ Click on LogIn Button
 Click on Minimize Radio Button
     Wait Until Element Is Visible    ${chilango_locators.minimize_button}    ${TIME}
     Click Element                    ${chilango_locators.minimize_button}
-    Wait Until Element Is Visible    ${chilango_locators.maximize_button}      ${TIME}
+    Wait Until Element Is Visible    ${chilango_locators.maximize_button}    ${TIME}
 
 Click on Play Radio Button
-    Wait Until Element Is Visible    ${chilango_locators.play_button}    ${TIME}
+    Wait Until Element Is Visible    ${chilango_locators.play_button}     ${TIME}
     Click Element                    ${chilango_locators.play_button}
     Wait Until Element Is Visible    ${chilango_locators.pause_button}    ${TIME}
 
 Click on Maximize Radio Button
     Wait Until Element Is Visible    ${chilango_locators.maximize_button}    ${TIME}
     Click Element                    ${chilango_locators.maximize_button}
-    Wait Until Element Is Visible    ${chilango_locators.chilango_radio}    ${TIME}
+    Wait Until Element Is Visible    ${chilango_locators.chilango_radio}     ${TIME}
 
 Click on Mute Radio Button
-    Wait Until Element Is Visible    ${chilango_locators.mute_button}    ${TIME}
+    Wait Until Element Is Visible    ${chilango_locators.mute_button}      ${TIME}
     Click Element                    ${chilango_locators.mute_button}
     Wait Until Element Is Visible    ${chilango_locators.unmute_button}    ${TIME}
 
 CLick on Newsletter Button
     Wait Until Element Is Visible    ${chilango_locators.newsletter_button}    ${TIME}
     Click Element                    ${chilango_locators.newsletter_button}
-   
+
+Close Search Form
+    Wait Until Element Is Visible        ${chilango_locators.close_search}    ${TIME}
+    Click Element                        ${chilango_locators.close_search}
+    Wait Until Element Is Not Visible    ${chilango_locators.close_search}    ${TIME}

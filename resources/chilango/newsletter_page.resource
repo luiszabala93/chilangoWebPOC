@@ -26,3 +26,5 @@ Verify Email Registration
     Wait Until Element Is Visible    ${newsletter_locators.message_check_email}    ${TIME}
     Wait Until Element Is Visible    ${newsletter_locators.message_gracias}        ${TIME}
     Wait Until Element Is Visible    ${newsletter_locators.go_to_home_button}      ${TIME}
+
+
