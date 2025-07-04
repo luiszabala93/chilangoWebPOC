@@ -161,3 +161,18 @@ CH_14 - Close Chilango Radio
     [Tags]    Chilango    CHI_14
     Load Chilango Home Page
     Click on Minimize Radio Button
+
+CH_15 - LogIn Page User Not Registered
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the user is not registered
+    ...    Expected results: The user should not be registered
+    [Tags]    Chilango    CHI_15
+    ${MAIL} =    generate_random_email
+    ${PASSWORD} =    generate_random_password
+    Load Chilango Home Page
+    Click on LogIn Button    
+    Load Login Page
+    Input Text In Email Field    ${MAIL}    
+    Input Text In Password Field    ${PASSWORD}
+    Click on Login Button Inside The Login Page
+    Verify Unregistered Email

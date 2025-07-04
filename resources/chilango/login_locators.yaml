@@ -4,4 +4,15 @@ login_locators:
   email_input:                 xpath=//input[@id="email"]
   password_input:              xpath=//input[@id="password"]
   login_button_Inside:         xpath=//button
+  email_unregistered:          xpath=//div[contains(text(), 'El correo no está registrado')]
+  email_entry:                 xpath=//input[@name="email"]
+  email_confirmation:          xpath=//input[@name="email_confirm"]
+  input_name:                  xpath=//input[@name="name"]
+  input_last_name:             xpath=//input[@name="last_name"]
+  select_gender:               xpath=//select[@name="gender"]
+  input_birthdate:             xpath=//input[@name="birthdate"]
+  input_phone:                 xpath=//input[@name="cell_phone"]
+  input_password:              xpath=//input[@name="password"]
+  password_confirmation:       xpath=//input[@name="password_confirm"]
+
   

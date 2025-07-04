@@ -51,3 +51,15 @@ Obtain Text From JS
     ...    }
     Should Not Be Empty    ${TEXT}    The text does not contain the expected content
     Log    ${TEXT}
+
+Verify Unregistered Email
+    Wait Until Element Is Visible    ${login_locators.email_unregistered}       ${TIME}
+    Wait Until Element Is Visible    ${login_locators.email_entry}              ${TIME}
+    Wait Until Element Is Visible    ${login_locators.email_confirmation}       ${TIME}
+    Wait Until Element Is Visible    ${login_locators.input_name}               ${TIME}
+    Wait Until Element Is Visible    ${login_locators.input_last_name}          ${TIME}
+    Wait Until Element Is Visible    ${login_locators.select_gender}            ${TIME}
+    Wait Until Element Is Visible    ${login_locators.input_birthdate}          ${TIME}
+    Wait Until Element Is Visible    ${login_locators.input_phone}              ${TIME}
+    Wait Until Element Is Visible    ${login_locators.input_password}           ${TIME}
+    Wait Until Element Is Visible    ${login_locators.password_confirmation}    ${TIME}

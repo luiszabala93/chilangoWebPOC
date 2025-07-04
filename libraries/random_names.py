@@ -28,3 +28,8 @@ def generate_random_email():
     domain = random.choice(domains)
     email = f"{name.lower()}_{last_name.lower()}@{domain}"
     return email
+
+def generate_random_password(length=8):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(characters) for i in range(length))
+    return password
