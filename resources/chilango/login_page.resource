@@ -6,7 +6,7 @@ Variables    ./login_locators.yaml
 *** Variables ***
 ${TIME} =       10s
 ${SH_TIME} =    1s
-
+${ENVIRONMENT}
 
 *** Keywords ***
 Load Login Page
