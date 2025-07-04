@@ -23,6 +23,7 @@ ${LONG_TIME} =         20
 
 #To run
 #robot -d results -i CHI_01 -v ENVIRONMENT:CHILANGO -v REPORT:FALSE -v BROWSER:chrome .
+#pabot --testlevelsplit --processes 4 -d results -i CHI_01 -v ENVIRONMENT:CHILANGO -v REPORT:FALSE -v BROWSER:chrome .
 
 *** Test Cases ***
 CHI_01 - Chilango Home Page Is Loaded
@@ -234,7 +235,7 @@ CH_18 - Password Is Not Correct On LogIn
     ...    This test case verify that the password is not correct on login
     ...    Expected results: The password should not be correct
     [Tags]    Chilango    CHI_18
-    ${MAIL} =        Set Variable    a.d.martinez952@gmail.com
+    ${MAIL} =        Set Variable    ${USER.ANG}
     ${PASSWORD} =    Set Variable    1234567                           #1234567890
     Load Chilango Home Page
     Click on LogIn Button    

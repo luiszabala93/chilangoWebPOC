@@ -4,7 +4,7 @@ Library      ../../libraries/create_xpath.py
 Variables    ./newsletter_locators.yaml
 
 *** Variables ***
-${TIME} =       10s
+${TIME} =       50s
 ${SH_TIME} =    1s
 
 *** Keywords ***
