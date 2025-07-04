@@ -3,11 +3,11 @@ import string
 
 def generate_random_name():
     name = [
-    "Luis", "María", "Angel", "Sofía", "Carlos", "Valeria",
-    "Fernando", "Camila", "José", "Isabela", "Miguel", "Lucía",
-    "Juan", "Daniela", "Andrés", "Paula", "Diego", "Renata",
-    "Jorge", "Antonella", "Ricardo", "Fernanda", "Raúl", "Regina",
-    "Héctor", "Jimena", "Emilio", "Natalia", "Víctor", "Elena"
+    "Luis", "Maria", "Angel", "Sofia", "Carlos", "Valeria",
+    "Fernando", "Camila", "Jose", "Isabela", "Miguel", "Lucia",
+    "Juan", "Daniela", "Andres", "Paula", "Diego", "Renata",
+    "Jorge", "Antonella", "Ricardo", "Fernanda", "Raul", "Regina",
+    "Hector", "Jimena", "Emilio", "Natalia", "Víctor", "Elena"
 ]
     return random.choice(name)
 

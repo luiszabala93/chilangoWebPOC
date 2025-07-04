@@ -132,4 +132,11 @@ Click On Create Account Button
     Click Element                    ${login_locators.create_account_button}
 
 Password Incorrect Alert
-    Wait Until Element Is Visible    ${login_locators.password_incorrect}    ${TIME}
+    Wait Until Element Is Visible    ${login_locators.password_incorrect}        ${TIME}
+
+Verify Registration
+    Wait Until Element Is Visible    ${login_locators.next_button}               ${TIME}
+    Click Element                    ${login_locators.next_button}
+    Wait Until Element Is Visible    ${login_locators.registrate_final_button}   ${TIME}
+    Click Element                    ${login_locators.registrate_final_button}
+    Wait Until Element Is Visible    ${login_locators.confirm_email_message}           ${TIME}

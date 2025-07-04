@@ -18,4 +18,6 @@ login_locators:
   terms_conditions:            xpath=//input[@id="checkbox-1"]
   create_account_button:       xpath=//button
   password_incorrect:          xpath=//div[contains(text(), "Correo o contraseña")]
-  
+  next_button:                 xpath=//button[@type="submit"]
+  registrate_final_button:     xpath=//button[contains(text(), "Regístrate")]
+  confirm_email_message:       xpath=//h1[contains(text(), "Confirmar correo")]
