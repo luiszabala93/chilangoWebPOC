@@ -153,4 +153,11 @@ CH_13 - Verify That The Search Form Can Be Closed
     Load Chilango Home Page
     Open Search Field
     Close Search Form
-    
+
+CH_14 - Close Chilango Radio
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that Chilango Radio can be closed successfully
+    ...    Expected results: The radio should close successfully
+    [Tags]    Chilango    CHI_14
+    Load Chilango Home Page
+    Click on Minimize Radio Button
