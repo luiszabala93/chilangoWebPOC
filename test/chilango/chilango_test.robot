@@ -167,12 +167,41 @@ CH_15 - LogIn Page User Not Registered
     ...    This test case verify that the user is not registered
     ...    Expected results: The user should not be registered
     [Tags]    Chilango    CHI_15
-    ${MAIL} =    generate_random_email
+    ${MAIL} =        generate_random_email
     ${PASSWORD} =    generate_random_password
     Load Chilango Home Page
     Click on LogIn Button    
     Load Login Page
-    Input Text In Email Field    ${MAIL}    
+    Input Text In Email Field       ${MAIL}    
     Input Text In Password Field    ${PASSWORD}
     Click on Login Button Inside The Login Page
     Verify Unregistered Email
+
+CH_16 - Fill Out Registration form
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the registration form can be filled out successfully
+    ...    Expected results: The registration form should be filled out successfully
+    [Tags]    Chilango    CHI_16
+    ${NAME} =         generate_random_name
+    ${LAST_NAME} =    generate_random_last_name
+    ${MAIL} =         generate_random_email
+    ${PASSWORD} =     generate_random_password
+    ${BIRTHDATE} =    generate_random_birthdate
+    ${PHONE} =        generate_random_phone_number
+    Load Chilango Home Page
+    Click on LogIn Button    
+    Load Login Page
+    Click On Registration Button
+    Fill Email Field                    ${MAIL}
+    Fill Email Confirmation Field       ${MAIL}
+    Fill Name Field                     ${NAME}
+    Fill Last Name Field                ${LAST_NAME}
+    Select Gender
+    Fill Date Of Birth Field            ${BIRTHDATE}
+    Fill Phone Field                    ${PHONE}
+    Fill Password Field                 ${PASSWORD}
+    Fill Password Confirmation Field    ${PASSWORD}
+    
+
+
+

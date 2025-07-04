@@ -14,5 +14,6 @@ login_locators:
   input_phone:                 xpath=//input[@name="cell_phone"]
   input_password:              xpath=//input[@name="password"]
   password_confirmation:       xpath=//input[@name="password_confirm"]
+  registrarse_button:          xpath=//a[text()="Registrate"]
 
   
