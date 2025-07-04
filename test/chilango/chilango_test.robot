@@ -202,9 +202,9 @@ CH_16 - Fill Out Registration form
     Fill Password Field                 ${PASSWORD}
     Fill Password Confirmation Field    ${PASSWORD}
     
-CH_17 - Email Hasn't Been Confirmed
+CH_17 - Email Has not Been Confirmed From Reistrate Form
     [Documentation]    Positive Test Case:
-    ...    This test case verify that the email hasn't been confirmed
+    ...    This test case verify that the email has not been confirmed
     ...    Expected results: The email should not be confirmed
     [Tags]    Chilango    CHI_17
     ${NAME} =         generate_random_name
@@ -284,9 +284,10 @@ CH_20 - Password Recovery
     Click on Forgot Password Button
     Verify Forgot Password Page
 
-CHI_21 - Email Doesn't Exist
+CHI_21 - Verify message that the email does not exist from the forgot password page
     [Documentation]    Positive Test Case:
-    ...    This test case verify that the email doesn't exist
+    ...    This test case verify message that the email does not exist 
+    ...    from the forgot password page
     ...    Expected results: The email should not exist
     [Tags]    Chilango    CHI_21
     ${MAIL} =     generate_random_email
