@@ -135,8 +135,6 @@ Password Incorrect Alert
     Wait Until Element Is Visible    ${login_locators.password_incorrect}        ${TIME}
 
 Verify Registration
-    Wait Until Element Is Visible    ${login_locators.next_button}                ${TIME}
-    Click Element                    ${login_locators.next_button}
     Wait Until Element Is Visible    ${login_locators.registrate_final_button}    ${TIME}
     Click Element                    ${login_locators.registrate_final_button}
     Wait Until Element Is Visible    ${login_locators.confirm_email_message}      ${TIME}
@@ -150,4 +148,10 @@ Verify Forgot Password Page
     Wait Until Element Is Visible    ${login_locators.email_recovery_input}        ${TIME}
     Wait Until Element Is Visible    ${login_locators.continue_button}             ${TIME}
 
+Click On Next Button
+    Wait Until Element Is Visible    ${login_locators.continue_button}             ${TIME}
+    Click Element                    ${login_locators.continue_button}
+
+Email Not Registered Alert
+    Wait Until Element Is Visible    ${login_locators.email_not_registered_alert}        ${TIME}
 

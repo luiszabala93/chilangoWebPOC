@@ -270,7 +270,9 @@ CH_19 - Verify New Account Registration
     Fill Password Confirmation Field    ${PASSWORD}
     Accept Terms And Conditions
     Click On Create Account Button
+    Click On Next Button
     Verify Registration
+
 CH_20 - Password Recovery
     [Documentation]    Positive Test Case:
     ...    This test case verify that the password recovery is successful
@@ -281,3 +283,19 @@ CH_20 - Password Recovery
     Load Login Page
     Click on Forgot Password Button
     Verify Forgot Password Page
+
+CHI_21 - Email Doesn't Exist
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the email doesn't exist
+    ...    Expected results: The email should not exist
+    [Tags]    Chilango    CHI_21
+    ${MAIL} =     generate_random_email
+    Load Chilango Home Page
+    Click on LogIn Button
+    Load Login Page
+    Click on Forgot Password Button
+    Verify Forgot Password Page
+    Input Text In Email Field       ${MAIL}
+    Click On Next Button
+    Email Not Registered Alert
+    
