@@ -229,7 +229,7 @@ CH_17 - Email Has not Been Confirmed From Reistrate Form
     Click On Create Account Button
     Location Should Be                  ${PAGE.CREATE_ACCOUNT}
 
-CH_18 - Password Is Not correct On LogIn
+CH_18 - Password Is Not Correct On LogIn
     [Documentation]    Positive Test Case:
     ...    This test case verify that the password is not correct on login
     ...    Expected results: The password should not be correct
@@ -284,7 +284,7 @@ CH_20 - Password Recovery
     Click on Forgot Password Button
     Verify Forgot Password Page
 
-CHI_21 - Verify message that the email does not exist from the forgot password page
+CHI_21 - Verify Message That Email Does Not Exist From The Forgot Password Page
     [Documentation]    Positive Test Case:
     ...    This test case verify message that the email does not exist 
     ...    from the forgot password page
