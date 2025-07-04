@@ -284,9 +284,10 @@ CH_20 - Password Recovery
     Click on Forgot Password Button
     Verify Forgot Password Page
 
-CHI_21 - Email Doesn't Exist
+CHI_21 - Verify message that the email does not exist from the forgot password page
     [Documentation]    Positive Test Case:
-    ...    This test case verify that the email doesn't exist
+    ...    This test case verify message that the email does not exist 
+    ...    from the forgot password page
     ...    Expected results: The email should not exist
     [Tags]    Chilango    CHI_21
     ${MAIL} =     generate_random_email
