@@ -80,3 +80,5 @@ Close Search Form
     Wait Until Element Is Visible        ${chilango_locators.close_search}    ${TIME}
     Click Element                        ${chilango_locators.close_search}
     Wait Until Element Is Not Visible    ${chilango_locators.close_search}    ${TIME}
+
+

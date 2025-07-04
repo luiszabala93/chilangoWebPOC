@@ -228,3 +228,19 @@ CH_17 - Email Has not Been Confirmed From Reistrate Form
     Accept Terms And Conditions
     Click On Create Account Button
     Location Should Be                  ${PAGE.CREATE_ACCOUNT}
+
+CH_18 - Password Is Not correct On LogIn
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the password is not correct on login
+    ...    Expected results: The password should not be correct
+    [Tags]    Chilango    CHI_18
+    ${MAIL} =        Set Variable    a.d.martinez952@gmail.com
+    ${PASSWORD} =    Set Variable    1234567                           #1234567890
+    Load Chilango Home Page
+    Click on LogIn Button    
+    Load Login Page
+    Input Text In Email Field       ${MAIL}    
+    Input Text In Password Field    ${PASSWORD}
+    Click on Login Button Inside The Login Page
+    Password Incorrect Alert
+    
