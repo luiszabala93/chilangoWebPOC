@@ -2,3 +2,6 @@
 venv/
 results/
 libraries/__pycache__/
+
+# Files
+*.pabotsuitenames
