@@ -1,10 +1,10 @@
 *** Variables ***
 &{USER} = 
-...    ANG = ${None}
-...    JOS = ${None}
-...    LUI = ${None}
+...    ANG=a.d.martinez952@gmail.com
+...    JOS=${None}
+...    LUI=${None}
     
 &{PASSWORD} =
-...    ANG = ${None}
-...    JOS = ${None}
-...    LUI = ${None}
+...    ANG=${None}
+...    JOS=${None}
+...    LUI=${None}

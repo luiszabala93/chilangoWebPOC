@@ -23,6 +23,7 @@ ${LONG_TIME} =         20
 
 #To run
 #robot -d results -i CHI_01 -v ENVIRONMENT:CHILANGO -v REPORT:FALSE -v BROWSER:chrome .
+#pabot --testlevelsplit --processes 4 -d results -i CHI_01 -v ENVIRONMENT:CHILANGO -v REPORT:FALSE -v BROWSER:chrome .
 
 *** Test Cases ***
 CHI_01 - Chilango Home Page Is Loaded
@@ -229,12 +230,12 @@ CH_17 - Email Has not Been Confirmed From Reistrate Form
     Click On Create Account Button
     Location Should Be                  ${PAGE.CREATE_ACCOUNT}
 
-CH_18 - Password Is Not correct On LogIn
+CH_18 - Password Is Not Correct On LogIn
     [Documentation]    Positive Test Case:
     ...    This test case verify that the password is not correct on login
     ...    Expected results: The password should not be correct
     [Tags]    Chilango    CHI_18
-    ${MAIL} =        Set Variable    a.d.martinez952@gmail.com
+    ${MAIL} =        Set Variable    ${USER.ANG}
     ${PASSWORD} =    Set Variable    1234567                           #1234567890
     Load Chilango Home Page
     Click on LogIn Button    
@@ -284,7 +285,7 @@ CH_20 - Password Recovery
     Click on Forgot Password Button
     Verify Forgot Password Page
 
-CHI_21 - Verify message that the email does not exist from the forgot password page
+CHI_21 - Verify Message That Email Does Not Exist From The Forgot Password Page
     [Documentation]    Positive Test Case:
     ...    This test case verify message that the email does not exist 
     ...    from the forgot password page
@@ -299,4 +300,14 @@ CHI_21 - Verify message that the email does not exist from the forgot password p
     Input Text In Email Field       ${MAIL}
     Click On Next Button
     Email Not Registered Alert
-    
+
+CHI_22 - Returning To Chilango From Login Page
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the user can return to Chilango from login page
+    ...    Expected results: The user should be able to return to Chilango successfully
+    [Tags]    Chilango    CHI_22
+    Load Chilango Home Page
+    Click on LogIn Button
+    Load Login Page
+    Click On Chilango Logo
+    Load Chilango Home Page
