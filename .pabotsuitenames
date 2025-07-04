@@ -1,0 +1,20 @@
+datasources:cc29673498abb4e534b558e89d3955b8a095b116
+commandlineoptions:94fb141e971b98cdd3696da094255cbcabbab304
+suitesfrom:no-suites-from-option
+file:35ea33f42c351c395648e73a3027f8fd62f66d48
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CHI_01 - Chilango Home Page Is Loaded
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CHI_02 - Search Tim Burton's "Laberinto en CDMX" news on Chilango
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CHI_03 - Close Banner
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CHI_04 - LogIn Page
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CHI_05 - Play Chilango Radio and Verify That It Is Playing
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CH_06 - Minimize and Maximize Chilango Radio
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CHI_07 - Mute Chilango Radio
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CHI 08 - @ Missing In The Mail
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CHI_09 - Missing Password
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CHI_10 - Missing Email
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CH_11 - Verify That The Newsletter Button Is Working
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CH_12 - Verify That User Can Suscribe To The Newsletter
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CH_13 - Verify That The Search Form Can Be Closed
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CH_14 - Close Chilango Radio
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CH_15 - LogIn Page User Not Registered
+--test chilangoWebPOC.Test.Chilango.Chilango Test.CH_16 - Fill Out Registration form

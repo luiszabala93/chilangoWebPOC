@@ -1,6 +1,6 @@
 *** Variables ***
 &{USER} = 
-...    ANG = ${None}
+...    ANG = a.d.martinez952@gmail.com
 ...    JOS = ${None}
 ...    LUI = ${None}
     

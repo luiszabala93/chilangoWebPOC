@@ -1,7 +1,6 @@
-fpdf
-PyMuPDF
-pypdf
 PyYAML
 robotframework
 robotframework-selenium2library
 robotframework-seleniumlibrary
+robotframework-ScreenCapLibrary
+robotframework-pabot 
