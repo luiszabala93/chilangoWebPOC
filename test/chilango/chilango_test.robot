@@ -271,6 +271,7 @@ CH_19 - Verify New Account Registration
     Accept Terms And Conditions
     Click On Create Account Button
     Verify Registration
+
 CH_20 - Password Recovery
     [Documentation]    Positive Test Case:
     ...    This test case verify that the password recovery is successful
