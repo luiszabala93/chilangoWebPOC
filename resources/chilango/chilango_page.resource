@@ -70,3 +70,8 @@ Click on Mute Radio Button
     Wait Until Element Is Visible    ${chilango_locators.mute_button}    ${TIME}
     Click Element                    ${chilango_locators.mute_button}
     Wait Until Element Is Visible    ${chilango_locators.unmute_button}    ${TIME}
+
+CLick on Newsletter Button
+    Wait Until Element Is Visible    ${chilango_locators.newsletter_button}    ${TIME}
+    Click Element                    ${chilango_locators.newsletter_button}
+   
