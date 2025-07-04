@@ -26,3 +26,4 @@ login_locators:
   email_recovery_input:          xpath=//input[@type="email"]
   continue_button:               xpath=//button[@type="submit"]
   email_not_registered_alert:    xpath=//div[@class="bg-red-100 p-4 text-center mb-4"]
+  chilango_logo:                 xpath=//img[@src="https://www.chilango.com/assets/img/logo.png"]

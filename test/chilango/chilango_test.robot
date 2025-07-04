@@ -298,4 +298,14 @@ CHI_21 - Email Doesn't Exist
     Input Text In Email Field       ${MAIL}
     Click On Next Button
     Email Not Registered Alert
-    
+
+CHI_22 - Returning To Chilango From Login Page
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the user can return to Chilango from login page
+    ...    Expected results: The user should be able to return to Chilango successfully
+    [Tags]    Chilango    CHI_22
+    Load Chilango Home Page
+    Click on LogIn Button
+    Load Login Page
+    Click On Chilango Logo
+    Load Chilango Home Page

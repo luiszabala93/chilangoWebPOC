@@ -155,3 +155,8 @@ Click On Next Button
 Email Not Registered Alert
     Wait Until Element Is Visible    ${login_locators.email_not_registered_alert}        ${TIME}
 
+Click On Chilango Logo
+    Wait Until Element Is Visible    ${login_locators.chilango_logo}                ${TIME}
+    Click Element                    ${login_locators.chilango_logo}
+
+
