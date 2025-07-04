@@ -21,3 +21,7 @@ login_locators:
   next_button:                 xpath=//button[@type="submit"]
   registrate_final_button:     xpath=//button[contains(text(), "Regístrate")]
   confirm_email_message:       xpath=//h1[contains(text(), "Confirmar correo")]
+  recover_password_button:     xpath=//a[text()="Recupérala aquí"]
+  forgot_password_headder:     xpath=//h1[contains(text(), "¿Olvidaste tu contraseña?")]
+  email_recovery_input:        xpath=//input[@type="email"]
+  continue_button:            xpath=//button[@type="submit"]

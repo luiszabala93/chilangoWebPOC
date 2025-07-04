@@ -271,3 +271,14 @@ CH_19 - Verify New Account Registration
     Accept Terms And Conditions
     Click On Create Account Button
     Verify Registration
+
+CH_20 - Password Recovery
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the password recovery is successful
+    ...    Expected results: The password should be recovered successfully
+    [Tags]    Chilango    CHI_20
+    Load Chilango Home Page
+    Click on LogIn Button
+    Load Login Page
+    Click on Forgot Password Button
+    Verify Forgot Password Page
