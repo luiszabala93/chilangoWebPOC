@@ -17,5 +17,5 @@ login_locators:
   registrarse_button:          xpath=//a[text()="Registrate"]
   terms_conditions:            xpath=//input[@id="checkbox-1"]
   create_account_button:       xpath=//button
-
+  password_incorrect:          xpath=//div[contains(text(), "Correo o contraseña")]
   

@@ -120,7 +120,7 @@ Fill Password Confirmation Field
 
 Select Gender
     ${INDEX}=    Evaluate    random.randint(1, 4)    modules=random
-    Select From List By Index    ${login_locators.select_gender}    ${INDEX}
+    Select From List By Index        ${login_locators.select_gender}    ${INDEX}
 
 Accept Terms And Conditions
     Wait Until Element Is Visible    ${login_locators.terms_conditions}          ${TIME}
@@ -130,3 +130,6 @@ Accept Terms And Conditions
 Click On Create Account Button
     Wait Until Element Is Visible    ${login_locators.create_account_button}     ${TIME}
     Click Element                    ${login_locators.create_account_button}
+
+Password Incorrect Alert
+    Wait Until Element Is Visible    ${login_locators.password_incorrect}    ${TIME}
