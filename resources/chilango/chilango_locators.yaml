@@ -20,3 +20,7 @@ chilango_locators:
  unmute_button:            xpath=//*[local-name()='svg' and contains(@class,'mute')]
  newsletter_button:        xpath=//a[text()="NEWSLETTER"]
  close_search:             xpath=//button[@aria-label="Buscador"]
+ magazine_julio_2025:      xpath=//img[contains(@src, "onerror=redirect/2025/07/portada257.jpg")]
+ chilango_logo_down:       xpath=//img[contains(@src, "chilango-logo")]
+ magazine_title:           xpath=//h1[@class="titlehOme ffPlayfair"]
+ download_mag_button:      xpath=//span[text()="+"]
