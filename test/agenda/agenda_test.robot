@@ -94,3 +94,17 @@ AGN_09 - Validates Event Day Color Change In Event Calendar
     Click On Event    El Rey León
     Wait A Is Visible    Comprar boleto
 
+AGN_10 - From Chilango To Agenda And Click On Termns And Conditions
+    [Documentation]    From chilango page opens agenda page and click on termns and conditions and waits until important elements are Visible
+    [Tags]    Agenda    AGN_10
+    Load Chilango Home Page
+    Click Span Class In Page     navbar-toggler-icon
+    Wait Image Visible     Agenda
+    Click Image In Page    Agenda
+    Switch From Chilango To Agenda Page
+    Load Agenda Home Page
+    Click A Name    Términos y condiciones
+    Switch From Agenda To Termns And Conditions
+    Wait Image Visible    Chilango - Te decimos qué hacer en la Ciudad de México
+    Wait A Is Visible     NEWSLETTER
+    Wait A Is Visible     Inicia Sesión
