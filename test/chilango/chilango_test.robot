@@ -320,6 +320,7 @@ CHI_23 - LogIn And User Profile Confirmation
     [Tags]    Chilango    CHI_23
     ${MAIL} =        Set Variable    ${USER.ANG}
     ${PASSWORD} =    Set Variable    ${PASSWORD.ANG}
+    ${NAME} =    Set Variable    Andrea
     Load Chilango Home Page
     Click on LogIn Button    
     Load Login Page
@@ -333,7 +334,10 @@ CHI_23 - LogIn And User Profile Confirmation
     Return To Chilango Home Page
     Close First Agenda Window
     Load Chilango Home Page
-    Verify Displayed Username Is Valid
+    Verify Displayed Username Is Valid    ${NAME}
+
+
+
   
 
 

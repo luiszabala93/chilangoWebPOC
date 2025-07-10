@@ -82,15 +82,30 @@ Close Search Form
     Wait Until Element Is Not Visible    ${chilango_locators.close_search}    ${TIME}
 
 Verify Displayed Username Is Valid
+    [Arguments]    ${VALID_NAME}
     Wait Until Element Is Visible    ${chilango_locators.inicia_sesion_link}    ${TIME}
-    ${displayed_name}=    Get Text    ${chilango_locators.inicia_sesion_link}
-    ${normalized}=    Evaluate    '${displayed_name}'.strip().lower()
-    @{VALID_NAMES}=    Create List
-    ...    luis    maria    angel    sofia    carlos    valeria
-    ...    fernando    camila    jose    isabela    miguel    lucia
-    ...    juan    daniela    andres    paula    diego    renata
-    ...    jorge    antonella    ricardo    fernanda    raul    regina
-    ...    hector    jimena    emilio    natalia    víctor    elena    andrea
+    ${DISPLAYED_NAME}=    Get Text    ${chilango_locators.inicia_sesion_link}
+    ${NORMALIZED}=    Evaluate    '${DISPLAYED_NAME}'.strip().lower()
+    ${VALID_NORMALIZED}=    Evaluate    '${VALID_NAME}'.strip().lower() 
+    Should Be Equal    ${NORMALIZED}    ${VALID_NORMALIZED}
 
-    Should Be True    '${normalized}' in @{VALID_NAMES}
 
+Scroll To Magazines
+    ${found}=    Set Variable    False
+    ${count}=    Set Variable    0
+    WHILE    '${found}' == 'False' and ${count} < 50
+        ${found}=    Run Keyword And Return Status    Page Should Contain Element    ${chilango_locators.chilango_logo_down}
+        Run Keyword If    '${found}' == 'False'    Execute JavaScript    window.scrollBy(0, 300)
+        Run Keyword If    '${found}' == 'False'    Sleep    0.5s
+        ${count}=    Evaluate    ${count} + 1
+    END
+    Run Keyword Unless    ${found}    Fail
+    Scroll Element Into View    ${chilango_locators.chilango_logo_down}
+
+
+Click on Magazine Julio 2025
+    Wait Until Element Is Visible       ${chilango_locators.magazine_julio_2025}    ${TIME}
+    Click Element                       ${chilango_locators.magazine_julio_2025}
+    Wait Until Element Is Visible       ${chilango_locators.magazine_title}         ${TIME}
+    Wait Until Element Is Visible       ${chilango_locators.download_mag_button}    ${TIME}
+    
