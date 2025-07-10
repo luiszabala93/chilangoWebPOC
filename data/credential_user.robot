@@ -5,6 +5,6 @@
 ...    LUI=${None}
     
 &{PASSWORD} =
-...    ANG=${None}
+...    ANG=12345678
 ...    JOS=${None}
 ...    LUI=${None}

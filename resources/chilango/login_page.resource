@@ -65,7 +65,7 @@ Verify Unregistered Email
     Wait Until Element Is Visible    ${login_locators.password_confirmation}    ${TIME}
 
 Click On Registration Button
-    Wait Until Element Is Visible    ${login_locators.registrarse_button}          ${TIME}
+    Wait Until Element Is Visible    ${login_locators.registrarse_button}       ${TIME}
     Click Element                    ${login_locators.registrarse_button}
     Wait Until Element Is Visible    ${login_locators.email_entry}              ${TIME}
     Wait Until Element Is Visible    ${login_locators.email_confirmation}       ${TIME}
@@ -123,40 +123,63 @@ Select Gender
     Select From List By Index        ${login_locators.select_gender}    ${INDEX}
 
 Accept Terms And Conditions
-    Wait Until Element Is Visible    ${login_locators.terms_conditions}          ${TIME}
+    Wait Until Element Is Visible    ${login_locators.terms_conditions}              ${TIME}
     Click Element                    ${login_locators.terms_conditions}
     Checkbox Should Be Selected      ${login_locators.terms_conditions}
 
 Click On Create Account Button
-    Wait Until Element Is Visible    ${login_locators.create_account_button}     ${TIME}
+    Wait Until Element Is Visible    ${login_locators.create_account_button}         ${TIME}
     Click Element                    ${login_locators.create_account_button}
 
 Password Incorrect Alert
-    Wait Until Element Is Visible    ${login_locators.password_incorrect}        ${TIME}
+    Wait Until Element Is Visible    ${login_locators.password_incorrect}            ${TIME}
 
 Verify Registration
-    Wait Until Element Is Visible    ${login_locators.registrate_final_button}    ${TIME}
+    Wait Until Element Is Visible    ${login_locators.registrate_final_button}       ${TIME}
     Click Element                    ${login_locators.registrate_final_button}
-    Wait Until Element Is Visible    ${login_locators.confirm_email_message}      ${TIME}
+    Wait Until Element Is Visible    ${login_locators.confirm_email_message}         ${TIME}
 
 Click on Forgot Password Button
-    Wait Until Element Is Visible    ${login_locators.recover_password_button}     ${TIME}
+    Wait Until Element Is Visible    ${login_locators.recover_password_button}       ${TIME}
     Click Element                    ${login_locators.recover_password_button}
 
 Verify Forgot Password Page
-    Wait Until Element Is Visible    ${login_locators.forgot_password_headder}     ${TIME}
-    Wait Until Element Is Visible    ${login_locators.email_recovery_input}        ${TIME}
-    Wait Until Element Is Visible    ${login_locators.continue_button}             ${TIME}
+    Wait Until Element Is Visible    ${login_locators.forgot_password_headder}       ${TIME}
+    Wait Until Element Is Visible    ${login_locators.email_recovery_input}          ${TIME}
+    Wait Until Element Is Visible    ${login_locators.continue_button}               ${TIME}
 
 Click On Next Button
-    Wait Until Element Is Visible    ${login_locators.continue_button}             ${TIME}
+    Wait Until Element Is Visible    ${login_locators.continue_button}               ${TIME}
     Click Element                    ${login_locators.continue_button}
 
 Email Not Registered Alert
-    Wait Until Element Is Visible    ${login_locators.email_not_registered_alert}        ${TIME}
+    Wait Until Element Is Visible    ${login_locators.email_not_registered_alert}    ${TIME}
 
 Click On Chilango Logo
-    Wait Until Element Is Visible    ${login_locators.chilango_logo}                ${TIME}
+    Wait Until Element Is Visible    ${login_locators.chilango_logo}                 ${TIME}
     Click Element                    ${login_locators.chilango_logo}
 
+Click On Modify Preferences Button
+    Wait Until Element Is Visible    ${login_locators.modify_preferences_button}     ${TIME}
+    Click Element                    ${login_locators.modify_preferences_button}
+    Wait Until Element Is Visible    ${login_locators.next_button}                   ${TIME}
+    Click Element                    ${login_locators.next_button}
 
+Go To Inicio Agenda
+    Wait Until Element Is Visible    ${login_locators.go_to_incio_agenda}            ${TIME}
+    Click Element                    ${login_locators.go_to_incio_agenda}
+
+Load Agenda Home Page
+    Location Should Be               ${PAGE.AGENDA}
+    Wait For Condition               return document.readyState == "complete"        ${TIME}
+
+Return To Chilango Home Page
+    Wait Until Element Is Visible    ${login_locators.return_chilango}               ${TIME}
+    Click Element                    ${login_locators.return_chilango}
+
+Close First Agenda Window
+    ${handles}=    Get Window Handles
+    Log    Ventanas abiertas: ${handles}
+    Switch Window    ${handles}[0]
+    Close Window
+    Switch Window    ${handles}[1]

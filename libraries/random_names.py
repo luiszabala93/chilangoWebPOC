@@ -7,7 +7,7 @@ def generate_random_name():
     "Fernando", "Camila", "Jose", "Isabela", "Miguel", "Lucia",
     "Juan", "Daniela", "Andres", "Paula", "Diego", "Renata",
     "Jorge", "Antonella", "Ricardo", "Fernanda", "Raul", "Regina",
-    "Hector", "Jimena", "Emilio", "Natalia", "Víctor", "Elena"
+    "Hector", "Jimena", "Emilio", "Natalia", "Victor", "Elena", "Andrea"
 ]
     return random.choice(name)
 

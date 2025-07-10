@@ -81,4 +81,16 @@ Close Search Form
     Click Element                        ${chilango_locators.close_search}
     Wait Until Element Is Not Visible    ${chilango_locators.close_search}    ${TIME}
 
+Verify Displayed Username Is Valid
+    Wait Until Element Is Visible    ${chilango_locators.inicia_sesion_link}    ${TIME}
+    ${displayed_name}=    Get Text    ${chilango_locators.inicia_sesion_link}
+    ${normalized}=    Evaluate    '${displayed_name}'.strip().lower()
+    @{VALID_NAMES}=    Create List
+    ...    luis    maria    angel    sofia    carlos    valeria
+    ...    fernando    camila    jose    isabela    miguel    lucia
+    ...    juan    daniela    andres    paula    diego    renata
+    ...    jorge    antonella    ricardo    fernanda    raul    regina
+    ...    hector    jimena    emilio    natalia    víctor    elena    andrea
+
+    Should Be True    '${normalized}' in @{VALID_NAMES}
 
