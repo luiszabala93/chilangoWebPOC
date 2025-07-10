@@ -28,4 +28,5 @@ login_locators:
   email_not_registered_alert:    xpath=//div[@class="bg-red-100 p-4 text-center mb-4"]
   chilango_logo:                 xpath=//img[@src="https://www.chilango.com/assets/img/logo.png"]
   modify_preferences_button:     xpath=//a[contains(text(), "Modificar mis preferencias")]
-  goto_incio_agenda:             xpath=//a[contains(text(), "Inicio")]
+  go_to_incio_agenda:            xpath=//a[contains(text(), "Inicio")]
+  return_chilango:               xpath=//a[contains(text(), "Chilango")]

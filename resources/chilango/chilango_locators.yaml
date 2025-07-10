@@ -4,7 +4,7 @@ chilango_locators:
  play_button:              xpath=//div[@class='RC-Image']
  menu_modal_button:        xpath=//nav//button[@type='button' and @title='Menú modal']
  newletter_link:           xpath=//a[contains(.,'NEWSLETTER')]
- inicia_sesion_link:       xpath=//a[contains(.,'Inicia Sesión')]
+ inicia_sesion_link:       xpath=//a[contains(@class, 'iniciarSesionLog')]
  principal_search_button:  xpath=//a[@href="#search"]
  search_input:             xpath=//input[@id="searchInput"]
  search_button2:           xpath=//button[@type="submit" and contains(@class, "suscribeButton") and @aria-label="Buscar"]

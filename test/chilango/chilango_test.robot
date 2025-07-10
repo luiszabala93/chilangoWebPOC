@@ -13,7 +13,7 @@ Resource     ../../resources/chilango/chilango_page.resource
 Resource     ../../resources/common_web.resource
 Resource     ../../resources/chilango/login_page.resource
 Resource     ../../resources/chilango/newsletter_page.resource
-Resource     ../../resources/agenda/agenda_page.resource
+
 
 Test Setup       Begin Web Test    ${TEST_DATA_PATH}
 Test Teardown    End Web Test
@@ -330,4 +330,11 @@ CHI_23 - LogIn And User Profile Confirmation
     Click On Next Button
     Go To Inicio Agenda
     Load Agenda Home Page
+    Return To Chilango Home Page
+    Close First Agenda Window
+    Load Chilango Home Page
+    Verify Displayed Username Is Valid
+  
+
+
 
