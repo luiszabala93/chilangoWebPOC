@@ -336,7 +336,14 @@ CHI_23 - LogIn And User Profile Confirmation
     Load Chilango Home Page
     Verify Displayed Username Is Valid    ${NAME}
 
-
+CHI_24 - Search Magazine And Click On It
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the user can search for a magazine and click on it
+    ...    Expected results: The user should be able to search for a magazine and click on it successfully
+    [Tags]    Chilango    CHI_24
+    Load Chilango Home Page
+    Scroll to magazines
+    Click On Magazine Julio 2025
 
   
 
