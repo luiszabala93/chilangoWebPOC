@@ -159,4 +159,12 @@ Click On Chilango Logo
     Wait Until Element Is Visible    ${login_locators.chilango_logo}                ${TIME}
     Click Element                    ${login_locators.chilango_logo}
 
+Click On Modify Preferences Button
+    Wait Until Element Is Visible    ${login_locators.modify_preferences_button}     ${TIME}
+    Click Element                    ${login_locators.modify_preferences_button}
+    Wait Until Element Is Visible    ${login_locators.next_button}                   ${TIME}
+    Click Element                    ${login_locators.next_button}
 
+Go To Inicio Agenda
+    Wait Until Element Is Visible    ${login_locators.goto_incio_agenda}             ${TIME}
+    Click Element                    ${login_locators.goto_incio_agenda}

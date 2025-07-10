@@ -13,6 +13,7 @@ Resource     ../../resources/chilango/chilango_page.resource
 Resource     ../../resources/common_web.resource
 Resource     ../../resources/chilango/login_page.resource
 Resource     ../../resources/chilango/newsletter_page.resource
+Resource     ../../resources/agenda/agenda_page.resource
 
 Test Setup       Begin Web Test    ${TEST_DATA_PATH}
 Test Teardown    End Web Test
@@ -236,7 +237,7 @@ CH_18 - Password Is Not Correct On LogIn
     ...    Expected results: The password should not be correct
     [Tags]    Chilango    CHI_18
     ${MAIL} =        Set Variable    ${USER.ANG}
-    ${PASSWORD} =    Set Variable    1234567                           #1234567890
+    ${PASSWORD} =    Set Variable    1234567                           #1234567899
     Load Chilango Home Page
     Click on LogIn Button    
     Load Login Page
@@ -311,3 +312,22 @@ CHI_22 - Returning To Chilango From Login Page
     Load Login Page
     Click On Chilango Logo
     Load Chilango Home Page
+
+CHI_23 - LogIn And User Profile Confirmation
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the user can log in and access their profile
+    ...    Expected results: The user should be able to log in and access their profile successfully
+    [Tags]    Chilango    CHI_23
+    ${MAIL} =        Set Variable    ${USER.ANG}
+    ${PASSWORD} =    Set Variable    ${PASSWORD.ANG}
+    Load Chilango Home Page
+    Click on LogIn Button    
+    Load Login Page
+    Input Text In Email Field       ${MAIL}    
+    Input Text In Password Field    ${PASSWORD}
+    Click on Login Button Inside The Login Page
+    Click On Modify Preferences Button
+    Click On Next Button
+    Go To Inicio Agenda
+    Load Agenda Home Page
+
