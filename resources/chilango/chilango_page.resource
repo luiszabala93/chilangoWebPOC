@@ -9,7 +9,6 @@ Variables    ./chilango_locators.yaml
 *** Variables ***
 ${TIME} =       10s
 ${SH_TIME} =    1s
-${DOWNLOAD_DIR} =    C:/Users/angyD/Downloads
 
 *** Keywords ***
 Load Chilango Home Page
@@ -124,6 +123,7 @@ Click On Download Magazine
     Click Element                    ${chilango_locators.download_mag_button}
 
 Verify Download
+    [Arguments]     ${DOWNLOAD_DIR}
     Sleep    5s
     ${archivo}=    Wait For Any Download    ${DOWNLOAD_DIR}    timeout=60    min_size_kb=10
     Log    Se descargó un archivo: ${archivo}

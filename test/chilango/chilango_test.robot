@@ -355,6 +355,7 @@ CHI_25 - Download Magazine
     ${XPATH2}=    Set Variable    ${chilango_locators.download_mag_button}
     ${MAIL} =        Set Variable    ${USER.ANG}
     ${PASSWORD} =    Set Variable    ${PASSWORD.ANG}
+    ${DOWNLOAD_DIR} =    Set Variable    C:/Users/angyD/Downloads
     Load Chilango Home Page
     Scroll to Element    ${XPATH1}
     Click On Magazine Julio 2025
@@ -365,9 +366,9 @@ CHI_25 - Download Magazine
     Input Text In Email Field       ${MAIL}    
     Input Text In Password Field    ${PASSWORD}
     Click on Login Button Inside The Login Page
-    Verify Download
+    Verify Download    ${DOWNLOAD_DIR}
 
-    
+
 
 
 
