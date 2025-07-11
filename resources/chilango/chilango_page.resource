@@ -1,12 +1,14 @@
 *** Settings ***
 Library      Selenium2Library
 Library      ../../libraries/create_xpath.py
+Library      ../../libraries/download_file.py
+
 Variables    ./chilango_locators.yaml
+
 
 *** Variables ***
 ${TIME} =       10s
 ${SH_TIME} =    1s
-${ENVIRONMENT}
 
 *** Keywords ***
 Load Chilango Home Page
@@ -90,22 +92,38 @@ Verify Displayed Username Is Valid
     Should Be Equal    ${NORMALIZED}    ${VALID_NORMALIZED}
 
 
-Scroll To Magazines
-    ${found}=    Set Variable    False
-    ${count}=    Set Variable    0
-    WHILE    '${found}' == 'False' and ${count} < 50
-        ${found}=    Run Keyword And Return Status    Page Should Contain Element    ${chilango_locators.chilango_logo_down}
-        Run Keyword If    '${found}' == 'False'    Execute JavaScript    window.scrollBy(0, 300)
-        Run Keyword If    '${found}' == 'False'    Sleep    0.5s
-        ${count}=    Evaluate    ${count} + 1
-    END
-    Run Keyword Unless    ${found}    Fail
-    Scroll Element Into View    ${chilango_locators.chilango_logo_down}
+Scroll To Element
+    [Arguments]    ${XPATH}
+    Wait For Condition    return document.readyState == "complete"    ${TIME}
+    ${FOUND}=    Set Variable    False
+    ${COUNT}=    Set Variable    0
 
+    WHILE    '${FOUND}' == 'False' and ${COUNT} < 50
+        ${FOUND}=    Run Keyword And Return Status    Page Should Contain Element    ${XPATH}
+        Run Keyword If    not ${FOUND}    Execute JavaScript    window.scrollBy(0, 900)
+        Run Keyword If    not ${FOUND}    Sleep    0.3s
+        ${COUNT}=    Evaluate    ${COUNT} + 1
+    END
+
+    IF    not ${FOUND}
+        Fail
+    END
+
+    Scroll Element Into View    ${XPATH}
+    Execute JavaScript    document.body.style.zoom="90%"
 
 Click on Magazine Julio 2025
     Wait Until Element Is Visible       ${chilango_locators.magazine_julio_2025}    ${TIME}
     Click Element                       ${chilango_locators.magazine_julio_2025}
     Wait Until Element Is Visible       ${chilango_locators.magazine_title}         ${TIME}
     Wait Until Element Is Visible       ${chilango_locators.download_mag_button}    ${TIME}
-    
+   
+Click On Download Magazine
+    Wait Until Element Is Visible    ${chilango_locators.download_mag_button}    ${TIME}
+    Click Element                    ${chilango_locators.download_mag_button}
+
+Verify Download
+    [Arguments]     ${DOWNLOAD_DIR}
+    Sleep    5s
+    ${archivo}=    Wait For Any Download    ${DOWNLOAD_DIR}    timeout=30    min_size_kb=10
+    Log    Se descargó un archivo: ${archivo}

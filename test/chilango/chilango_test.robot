@@ -4,6 +4,7 @@ Documentation    Chilango Test Suite
 
 Library      Selenium2Library
 Library      Collections
+Library      OperatingSystem
 Library      ../../libraries/create_xpath.py
 Library      ../../libraries/random_names.py
 
@@ -332,7 +333,7 @@ CHI_23 - LogIn And User Profile Confirmation
     Go To Inicio Agenda
     Load Agenda Home Page
     Return To Chilango Home Page
-    Close First Agenda Window
+    Close First Window
     Load Chilango Home Page
     Verify Displayed Username Is Valid    ${NAME}
 
@@ -341,11 +342,43 @@ CHI_24 - Search Magazine And Click On It
     ...    This test case verify that the user can search for a magazine and click on it
     ...    Expected results: The user should be able to search for a magazine and click on it successfully
     [Tags]    Chilango    CHI_24
-    Load Chilango Home Page
-    Scroll to magazines
+    ${XPATH1}=    Set Variable    ${chilango_locators.magazine_julio_2025}
+    Load Chilango Home Page       
+    Scroll to Element             ${XPATH1}
     Click On Magazine Julio 2025
 
-  
+CHI_25 - Download Magazine
+    [Documentation]    Positive Test Case:
+    ...    This test case verify that the user can download a magazine
+    ...    Expected results: The user should be able to download the magazine successfully
+    [Tags]    Chilango    CHI_25
+    ${XPATH1} =    Set Variable    ${chilango_locators.magazine_julio_2025}
+    ${XPATH2} =    Set Variable    ${chilango_locators.download_mag_button}
+    ${MAIL} =        Set Variable    ${USER.ANG}
+    ${PASSWORD} =    Set Variable    ${PASSWORD.ANG}
+    ${OS} =    Get Environment Variable    OS    default_value
+    ${USER_PROFILE} =    Get Environment Variable    USERPROFILE    C:/Users/Default
+    ${HOME} =    Get Environment Variable    HOME     /Users/Default
+    ${DOWNLOAD_DIR} =    Run Keyword If    '${OS}' == 'Windows_NT'
+    ...    Set Variable    ${USER_PROFILE}\\Downloads
+    ...    ELSE
+    ...    Set Variable    ${HOME}/Downloads
+    Load Chilango Home Page
+    Click on Minimize Radio Button
+    Scroll to Element    ${XPATH1}
+    Click On Magazine Julio 2025
+    Scroll To Element    ${XPATH2}
+    Click On Download Magazine
+    Close First Window
+    Load Login Page
+    Input Text In Email Field       ${MAIL}    
+    Input Text In Password Field    ${PASSWORD}
+    Click on Login Button Inside The Login Page
+    Verify Download    ${DOWNLOAD_DIR}
+
+
+
+
 
 
 
