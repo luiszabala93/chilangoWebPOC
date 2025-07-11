@@ -18,7 +18,7 @@ Test Teardown    End Web Test
 *** Variables ***
 ${TEST_DATA_PATH} =    agenda
 ${LONG_TIME} =         20
-
+${ToAgenda} =          navbar-toggler-icon
 #To run
 #robot -d results -i AGN_01 -v ENVIRONMENT:AGENDA -v REPORT:FALSE -v BROWSER:chrome .
 
@@ -98,7 +98,7 @@ AGN_10 - From Chilango To Agenda And Click On Termns And Conditions
     [Documentation]    From chilango page opens agenda page and click on termns and conditions and waits until important elements are Visible
     [Tags]    Agenda    AGN_10
     Load Chilango Home Page
-    Click Span Class In Page     navbar-toggler-icon
+    Click Span Class In Page     ${ToAgenda}
     Wait Image Visible     Agenda
     Click Image In Page    Agenda
     Switch From Chilango To Agenda Page
