@@ -375,10 +375,3 @@ CHI_25 - Download Magazine
     Input Text In Password Field    ${PASSWORD}
     Click on Login Button Inside The Login Page
     Verify Download    ${DOWNLOAD_DIR}
-
-
-
-
-
-
-
