@@ -73,7 +73,7 @@ Switch From Chilango To Agenda Page
 
 Switch From Agenda To Termns And Conditions
     Wait For Condition    return document.readyState == "complete"        ${TIME}
-    Switch Window         title=Terminos Y condiciones Chilango 
+    Switch Window         title=Chilango - Términos y Condiciones de Uso del sitio web www.chilango.com - Chilango 
 Switch From Agenda To Chilango Page
     Wait For Condition    return document.readyState == "complete"        ${TIME}
     Switch Window         MAIN
