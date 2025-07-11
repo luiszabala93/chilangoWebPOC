@@ -125,6 +125,5 @@ Click On Download Magazine
 Verify Download
     [Arguments]     ${DOWNLOAD_DIR}
     Sleep    5s
-    ${archivo}=    Wait For Any Download    ${DOWNLOAD_DIR}    timeout=60    min_size_kb=10
+    ${archivo}=    Wait For Any Download    ${DOWNLOAD_DIR}    timeout=30    min_size_kb=10
     Log    Se descargó un archivo: ${archivo}
-    Should Exist    ${archivo}

@@ -364,6 +364,7 @@ CHI_25 - Download Magazine
     ...    ELSE
     ...    Set Variable    ${HOME}/Downloads
     Load Chilango Home Page
+    Click on Minimize Radio Button
     Scroll to Element    ${XPATH1}
     Click On Magazine Julio 2025
     Scroll To Element    ${XPATH2}
