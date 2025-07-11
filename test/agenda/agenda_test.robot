@@ -18,7 +18,7 @@ Test Teardown    End Web Test
 *** Variables ***
 ${TEST_DATA_PATH} =    agenda
 ${LONG_TIME} =         20
-
+${ToAgenda} =          navbar-toggler-icon
 #To run
 #robot -d results -i AGN_01 -v ENVIRONMENT:AGENDA -v REPORT:FALSE -v BROWSER:chrome .
 
@@ -94,3 +94,16 @@ AGN_09 - Validates Event Day Color Change In Event Calendar
     Click On Event    El Rey León
     Wait A Is Visible    Comprar boleto
 
+AGN_10 - From Chilango To Agenda And Click On Termns And Conditions
+    [Documentation]    From chilango page opens agenda page and click on termns and conditions and waits until important elements are Visible
+    [Tags]    Agenda    AGN_10
+    ${VAR} =    Set Variable    Agenda
+    Load Chilango Home Page
+    Click Span Class In Page     ${ToAgenda}
+    Wait Image Visible     ${VAR}
+    Click Image In Page    ${VAR}
+    Switch From Chilango To Agenda Page
+    Load Agenda Home Page
+    Click A Footer Sub    Términos y condiciones
+    Switch From Agenda To Termns And Conditions
+    Load Terminos y Condiciones Page    NEWSLETTER    Inicia Sesión    Chilango - Te decimos qué hacer en la Ciudad de México
