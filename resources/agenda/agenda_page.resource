@@ -73,7 +73,8 @@ Switch From Chilango To Agenda Page
 
 Switch From Agenda To Termns And Conditions
     Wait For Condition    return document.readyState == "complete"        ${TIME}
-    Switch Window         title=Chilango - Términos y Condiciones de Uso del sitio web www.chilango.com - Chilango 
+    Switch Window         title=Chilango - Términos y Condiciones de Uso del sitio web www.chilango.com - Chilango
+
 Switch From Agenda To Chilango Page
     Wait For Condition    return document.readyState == "complete"        ${TIME}
     Switch Window         MAIN
@@ -94,12 +95,21 @@ Wait A Is Visible
     [Arguments]    ${TITLE}
     ${XPATH} =    create_xpath.Obtain Xpath A Name    ${TITLE}
     Wait Until Element Is Visible    ${XPATH}
-Click A Name
+
+Load Terminos y Condiciones Page
+    [Arguments]    ${TITLE1}    ${TITLE2}    ${IMAGE}
+    Wait For Condition    return document.readyState == "complete"        ${TIME}
+    Wait A Is Visible     ${TITLE1}
+    Wait A Is Visible     ${TITLE2}
+    Wait Image Visible    ${IMAGE}
+
+Click A Footer Sub
     [Arguments]    ${TITLE}
     ${XPATH} =    create_xpath.Obtain Xpath A Name    ${TITLE}
     Wait Until Element Is Visible                     ${XPATH}
     Scroll Element Into View                          ${XPATH}
     Click Element                                     ${XPATH}
+
 Validates P Object Present
     [Arguments]    ${TITLE}
     ${XPATH} =    create_xpath.Obtain Xpath P             ${TITLE}

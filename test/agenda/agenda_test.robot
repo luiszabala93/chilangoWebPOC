@@ -97,14 +97,13 @@ AGN_09 - Validates Event Day Color Change In Event Calendar
 AGN_10 - From Chilango To Agenda And Click On Termns And Conditions
     [Documentation]    From chilango page opens agenda page and click on termns and conditions and waits until important elements are Visible
     [Tags]    Agenda    AGN_10
+    ${VAR} =    Set Variable    Agenda
     Load Chilango Home Page
     Click Span Class In Page     ${ToAgenda}
-    Wait Image Visible     Agenda
-    Click Image In Page    Agenda
+    Wait Image Visible     ${VAR}
+    Click Image In Page    ${VAR}
     Switch From Chilango To Agenda Page
     Load Agenda Home Page
-    Click A Name    Términos y condiciones
+    Click A Footer Sub    Términos y condiciones
     Switch From Agenda To Termns And Conditions
-    Wait Image Visible    Chilango - Te decimos qué hacer en la Ciudad de México
-    Wait A Is Visible     NEWSLETTER
-    Wait A Is Visible     Inicia Sesión
+    Load Terminos y Condiciones Page    NEWSLETTER    Inicia Sesión    Chilango - Te decimos qué hacer en la Ciudad de México
