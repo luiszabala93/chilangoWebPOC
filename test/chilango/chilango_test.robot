@@ -4,6 +4,7 @@ Documentation    Chilango Test Suite
 
 Library      Selenium2Library
 Library      Collections
+Library      OperatingSystem
 Library      ../../libraries/create_xpath.py
 Library      ../../libraries/random_names.py
 
@@ -351,11 +352,17 @@ CHI_25 - Download Magazine
     ...    This test case verify that the user can download a magazine
     ...    Expected results: The user should be able to download the magazine successfully
     [Tags]    Chilango    CHI_25
-    ${XPATH1}=    Set Variable    ${chilango_locators.magazine_julio_2025}
-    ${XPATH2}=    Set Variable    ${chilango_locators.download_mag_button}
+    ${XPATH1} =    Set Variable    ${chilango_locators.magazine_julio_2025}
+    ${XPATH2} =    Set Variable    ${chilango_locators.download_mag_button}
     ${MAIL} =        Set Variable    ${USER.ANG}
     ${PASSWORD} =    Set Variable    ${PASSWORD.ANG}
-    ${DOWNLOAD_DIR} =    Set Variable    C:/Users/angyD/Downloads
+    ${OS} =    Get Environment Variable    OS    default_value
+    ${USER_PROFILE} =    Get Environment Variable    USERPROFILE    C:/Users/Default
+    ${HOME} =    Get Environment Variable    HOME     /Users/Default
+    ${DOWNLOAD_DIR} =    Run Keyword If    '${OS}' == 'Windows_NT'
+    ...    Set Variable    ${USER_PROFILE}\\Downloads
+    ...    ELSE
+    ...    Set Variable    ${HOME}/Downloads
     Load Chilango Home Page
     Scroll to Element    ${XPATH1}
     Click On Magazine Julio 2025
