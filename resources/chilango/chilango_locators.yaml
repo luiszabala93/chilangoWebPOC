@@ -23,4 +23,5 @@ chilango_locators:
  magazine_julio_2025:      xpath=//img[contains(@src, "onerror=redirect/2025/07/portada257.jpg")]
  chilango_logo_down:       xpath=//img[contains(@src, "chilango-logo")]
  magazine_title:           xpath=//h1[@class="titlehOme ffPlayfair"]
- download_mag_button:      xpath=//span[text()="+"]
+ download_mag_button:      xpath=//button[.//span[contains(text(), "Descarga")]]
+ headder_aux:              xpath=//div[contains(text(), 'CONTENIDOS DE LA EDICIÓN 257')]

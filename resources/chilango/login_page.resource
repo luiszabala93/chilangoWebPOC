@@ -177,7 +177,7 @@ Return To Chilango Home Page
     Wait Until Element Is Visible    ${login_locators.return_chilango}               ${TIME}
     Click Element                    ${login_locators.return_chilango}
 
-Close First Agenda Window
+Close First Window
     ${handles}=    Get Window Handles
     Log    Ventanas abiertas: ${handles}
     Switch Window    ${handles}[0]
