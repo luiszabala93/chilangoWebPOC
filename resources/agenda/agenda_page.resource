@@ -96,8 +96,9 @@ Wait A Is Visible
     Wait Until Element Is Visible    ${XPATH}
 Click A Name
     [Arguments]    ${TITLE}
-    &{XPATH} =    create_xpath.Obtain Xpath A Name    ${TITLE}
+    ${XPATH} =    create_xpath.Obtain Xpath A Name    ${TITLE}
     Wait Until Element Is Visible                     ${XPATH}
+    Scroll Element Into View                          ${XPATH}
     Click Element                                     ${XPATH}
 Validates P Object Present
     [Arguments]    ${TITLE}
