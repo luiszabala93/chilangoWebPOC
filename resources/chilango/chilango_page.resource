@@ -98,7 +98,7 @@ Scroll To Element
     ${FOUND}=    Set Variable    False
     ${COUNT}=    Set Variable    0
 
-    WHILE    '${FOUND}' == 'False' and ${COUNT} < 50
+    WHILE    '${FOUND}' == 'False' and ${COUNT} < 60
         ${FOUND}=    Run Keyword And Return Status    Page Should Contain Element    ${XPATH}
         Run Keyword If    not ${FOUND}    Execute JavaScript    window.scrollBy(0, 900)
         Run Keyword If    not ${FOUND}    Sleep    0.3s
@@ -127,3 +127,11 @@ Verify Download
     Sleep    5s
     ${archivo}=    Wait For Any Download    ${DOWNLOAD_DIR}    timeout=30    min_size_kb=10
     Log    Se descargó un archivo: ${archivo}
+
+Chilango Year and Registered Brand
+    [Arguments]    
+    ${FULL_DATE}=    Get Time
+    ${FULL_DATE_STR}=    Convert To String    ${FULL_DATE}
+    ${YEAR}=    Evaluate    ${FULL_DATE_STR}[:4]
+    Page Should Contain    ${YEAR} Derechos Reservados
+    Page Should Contain    Chilango es una marca registrado de Capital Digital.
