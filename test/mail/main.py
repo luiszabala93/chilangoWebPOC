@@ -33,5 +33,3 @@ if (today in birthday_dic):
                 to_addrs='angy25.mtz@gmail.com',
                 msg=f"Subject: Happy Birthday\n\n {text}".encode('utf-8')
             )
-            
-                
