@@ -25,3 +25,5 @@ chilango_locators:
  magazine_title:           xpath=//h1[@class="titlehOme ffPlayfair"]
  download_mag_button:      xpath=//button[.//span[contains(text(), "Descarga")]]
  headder_aux:              xpath=//div[contains(text(), 'CONTENIDOS DE LA EDICIÓN 257')]
+ registered_brand:         xpath=//p[@class="fs12 m-0"]/text()[2]
+ cap_digital:              xpath=//img[@src="https://www.chilango.com/wp-content/themes/chilango/chilango/theme/img/logo-capital-digital-w.svg" ]
