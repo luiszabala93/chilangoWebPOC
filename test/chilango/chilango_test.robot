@@ -376,7 +376,7 @@ CHI_25 - Download Magazine
     Click on Login Button Inside The Login Page
     Verify Download    ${DOWNLOAD_DIR}
 
-CHI_26 - Chilango Year and Registerd Brand
+CHI_26 - Validate The Year and Chilango Brand
     [Documentation]
     [TAGS]    Chilango    CHI_26
     ${XPATH}=    Set Variable    ${chilango_locators.cap_digital}  
